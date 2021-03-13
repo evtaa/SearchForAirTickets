@@ -15,6 +15,7 @@
 
 @implementation DataManager
 
+#pragma mark - Sington
 + (instancetype)sharedInstance
 {
     static DataManager *instance;
@@ -25,6 +26,7 @@
     return instance;
 }
 
+#pragma mark - Public
 - (void)loadData
 {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
@@ -42,6 +44,17 @@
         });
         NSLog(@"Complete load data");
     });
+}
+
+- (City *)cityForIATA:(NSString *)iata {
+    if (iata) {
+        for (City *city in _citiesArray) {
+            if ([city.code isEqualToString:iata]) {
+                return city;
+            }
+        }
+    }
+    return nil;
 }
 
 - (NSArray *)countries

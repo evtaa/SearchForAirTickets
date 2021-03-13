@@ -23,7 +23,6 @@
     
     MainViewController* mainViewController = [[MainViewController alloc] init];
     UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController: mainViewController];
-    mainViewController.view.backgroundColor = [UIColor redColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
