@@ -16,10 +16,10 @@
 		A8165B7D25EBB28C00B32938 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = A8165B7C25EBB28C00B32938 /* City.m */; };
 		A8165B8125EBB4D100B32938 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = A8165B8025EBB4D100B32938 /* Airport.m */; };
 		A8165B8525EBB64900B32938 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8165B8425EBB64900B32938 /* DataManager.m */; };
+		A83F857025F134BC00FD1B92 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83F856F25F134BC00FD1B92 /* PlaceViewController.m */; };
 		A841E79625EE617800174160 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79325EE617800174160 /* airports.json */; };
 		A841E79725EE617800174160 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79425EE617800174160 /* cities.json */; };
 		A841E79825EE617800174160 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79525EE617800174160 /* countries.json */; };
-		A841E79E25EE668A00174160 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A841E79D25EE668A00174160 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +40,12 @@
 		A8165B8025EBB4D100B32938 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
 		A8165B8325EBB64900B32938 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		A8165B8425EBB64900B32938 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		A82B755D25F3DC28004E3B77 /* SearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchRequest.h; sourceTree = "<group>"; };
+		A83F856E25F134BC00FD1B92 /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		A83F856F25F134BC00FD1B92 /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		A841E79325EE617800174160 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
 		A841E79425EE617800174160 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		A841E79525EE617800174160 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
-		A841E79C25EE668A00174160 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A841E79D25EE668A00174160 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A8534A1525EE5D64005D0F5E /* App */,
-				A8534A1625EE5D90005D0F5E /* Screens */,
+				A8534A1625EE5D90005D0F5E /* Modules */,
 				A8534A1A25EE5E1D005D0F5E /* Resource */,
 			);
 			path = SearchForAirTickets;
@@ -97,13 +98,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A841E79B25EE666300174160 /* Second */ = {
+		A841E79B25EE666300174160 /* Place */ = {
 			isa = PBXGroup;
 			children = (
-				A841E79C25EE668A00174160 /* SecondViewController.h */,
-				A841E79D25EE668A00174160 /* SecondViewController.m */,
+				A83F856E25F134BC00FD1B92 /* PlaceViewController.h */,
+				A83F856F25F134BC00FD1B92 /* PlaceViewController.m */,
 			);
-			path = Second;
+			path = Place;
 			sourceTree = "<group>";
 		};
 		A8534A1525EE5D64005D0F5E /* App */ = {
@@ -115,13 +116,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		A8534A1625EE5D90005D0F5E /* Screens */ = {
+		A8534A1625EE5D90005D0F5E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A82B755D25F3DC28004E3B77 /* SearchRequest.h */,
 				A8534A1725EE5DA1005D0F5E /* Main */,
-				A841E79B25EE666300174160 /* Second */,
+				A841E79B25EE666300174160 /* Place */,
 			);
-			path = Screens;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		A8534A1725EE5DA1005D0F5E /* Main */ = {
@@ -245,11 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A841E79E25EE668A00174160 /* SecondViewController.m in Sources */,
 				A81495E525EAB45800C855F0 /* MainViewController.m in Sources */,
 				A81495DF25EAB45800C855F0 /* AppDelegate.m in Sources */,
 				A8165B8125EBB4D100B32938 /* Airport.m in Sources */,
 				A8165B7D25EBB28C00B32938 /* City.m in Sources */,
+				A83F857025F134BC00FD1B92 /* PlaceViewController.m in Sources */,
 				A81495F025EAB45C00C855F0 /* main.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
 				A8165B7825EBB1A400B32938 /* Country.m in Sources */,
