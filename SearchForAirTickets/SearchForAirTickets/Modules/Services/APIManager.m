@@ -6,11 +6,13 @@
 //
 
 #import "APIManager.h"
+#import "MapPrice.h"
 
 #define API_TOKEN @"7b091ca475f7c2c92df37e47f57ca328"
 #define API_URL_IP_ADDRESS @"https://api.ipify.org/?format=json"
 #define API_URL_CHEAP @"https://api.travelpayouts.com/v1/prices/cheap"
 #define API_URL_CITY_FROM_IP @"https://www.travelpayouts.com/whereami?ip="
+#define API_URL_MAP_PRICE @"https://map.aviasales.ru/prices.json?origin_iata="
 
 @implementation APIManager
 
@@ -62,6 +64,28 @@
         }
     }];
 }
+
+- (void)mapPricesFor:(City *)origin withCompletion:(void (^)(NSArray *prices))completion
+{
+    static BOOL isLoading;
+    if (isLoading) { return; }
+    isLoading = YES;
+    [self load:[NSString stringWithFormat:@"%@%@", API_URL_MAP_PRICE, origin.code] withCompletion:^(id  _Nullable result) {
+        NSArray *array = result;
+        NSMutableArray *prices = [NSMutableArray new];
+        if (array) {
+            for (NSDictionary *mapPriceDictionary in array) {
+                MapPrice *mapPrice = [[MapPrice alloc] initWithDictionary:mapPriceDictionary withOrigin:origin];
+                [prices addObject:mapPrice];
+            }
+            isLoading = NO;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(prices);
+            });
+        }
+    }];
+}
+
 
 #pragma mark - Private
 - (void)IPAddressWithCompletion:(void (^)(NSString *ipAddress))completion {
