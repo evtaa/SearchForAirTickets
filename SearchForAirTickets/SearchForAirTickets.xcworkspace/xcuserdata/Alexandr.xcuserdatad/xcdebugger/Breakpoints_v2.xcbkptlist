@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "37DDA98D-9C11-47F9-B5C8-A8730387BE82"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56A515CA-E58A-4638-80C7-3AF10696E671"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-searchButtonDidTap:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "56A515CA-E58A-4638-80C7-3AF10696E671 - f5a9a8f09ec3e054"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController searchButtonDidTap:]"
+                  moduleName = "SearchForAirTickets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexandr/Documents/GeekBrains/iOSDevelopmentInObjectiveC/Lesson3/L3_Evtodiy_Alexandr_Alexandrovich/task5/SearchForAirTickets/SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  uuid = "56A515CA-E58A-4638-80C7-3AF10696E671 - 6064f483bd8f5afa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[MainViewController searchButtonDidTap:]_block_invoke"
+                  moduleName = "SearchForAirTickets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexandr/Documents/GeekBrains/iOSDevelopmentInObjectiveC/Lesson3/L3_Evtodiy_Alexandr_Alexandrovich/task5/SearchForAirTickets/SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5515803F-E069-4719-95A8-24FB9CBBC600"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-searchButtonDidTap:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "104C003C-8DB2-4694-B9D1-51A6C1C882BB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-searchButtonDidTap:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A28BDE0-086A-423C-B9F2-AD86A8649794"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-searchButtonDidTap:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -23,11 +23,12 @@ typedef enum DataSourceType {
 @interface DataManager : NSObject
 
 + (instancetype)sharedInstance;
-- (void)loadData;
 
 @property (nonatomic, strong, readonly) NSArray *countries;
 @property (nonatomic, strong, readonly) NSArray *cities;
 @property (nonatomic, strong, readonly) NSArray *airports;
+- (City *)cityForIATA:(NSString *)iata;
+- (void)loadData;
 
 @end
 

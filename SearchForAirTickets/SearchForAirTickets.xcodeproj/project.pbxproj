@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130DF0D093EDF51E961EAE4E /* Pods_SearchForAirTickets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4A2B9391A9AE70BFDE6250 /* Pods_SearchForAirTickets.framework */; };
 		A81495DF25EAB45800C855F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A81495DE25EAB45800C855F0 /* AppDelegate.m */; };
 		A81495E525EAB45800C855F0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A81495E425EAB45800C855F0 /* MainViewController.m */; };
 		A81495EA25EAB45C00C855F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81495E925EAB45C00C855F0 /* Assets.xcassets */; };
@@ -20,9 +21,15 @@
 		A841E79625EE617800174160 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79325EE617800174160 /* airports.json */; };
 		A841E79725EE617800174160 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79425EE617800174160 /* cities.json */; };
 		A841E79825EE617800174160 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79525EE617800174160 /* countries.json */; };
+		A887DF2D25F65798003CAA36 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF2C25F65798003CAA36 /* APIManager.m */; };
+		A887DF3325F667E0003CAA36 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF3225F667E0003CAA36 /* Ticket.m */; };
+		A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560125F673F9006014EA /* TicketTableViewCell.m */; };
+		A8A0560925F67A6E006014EA /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560825F67A6E006014EA /* TicketsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07425C38CC0E2EA7C84A1027 /* Pods-SearchForAirTickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchForAirTickets.debug.xcconfig"; path = "Target Support Files/Pods-SearchForAirTickets/Pods-SearchForAirTickets.debug.xcconfig"; sourceTree = "<group>"; };
+		5AE8017B8F29701AA4EE611A /* Pods-SearchForAirTickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchForAirTickets.release.xcconfig"; path = "Target Support Files/Pods-SearchForAirTickets/Pods-SearchForAirTickets.release.xcconfig"; sourceTree = "<group>"; };
 		A81495DA25EAB45800C855F0 /* SearchForAirTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchForAirTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81495DD25EAB45800C855F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A81495DE25EAB45800C855F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +53,16 @@
 		A841E79325EE617800174160 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
 		A841E79425EE617800174160 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		A841E79525EE617800174160 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		A887DF2B25F65798003CAA36 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		A887DF2C25F65798003CAA36 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		A887DF3125F667E0003CAA36 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
+		A887DF3225F667E0003CAA36 /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		A8A0560025F673F9006014EA /* TicketTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketTableViewCell.h; sourceTree = "<group>"; };
+		A8A0560125F673F9006014EA /* TicketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketTableViewCell.m; sourceTree = "<group>"; };
+		A8A0560525F67858006014EA /* AirLineLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirLineLogo.h; sourceTree = "<group>"; };
+		A8A0560725F67A6E006014EA /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
+		A8A0560825F67A6E006014EA /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
+		CA4A2B9391A9AE70BFDE6250 /* Pods_SearchForAirTickets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchForAirTickets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +70,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130DF0D093EDF51E961EAE4E /* Pods_SearchForAirTickets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56432B6B8DD0F16FD48C4E18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07425C38CC0E2EA7C84A1027 /* Pods-SearchForAirTickets.debug.xcconfig */,
+				5AE8017B8F29701AA4EE611A /* Pods-SearchForAirTickets.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A81495D125EAB45800C855F0 = {
 			isa = PBXGroup;
 			children = (
 				A81495DC25EAB45800C855F0 /* SearchForAirTickets */,
 				A81495DB25EAB45800C855F0 /* Products */,
+				56432B6B8DD0F16FD48C4E18 /* Pods */,
+				DE2F18765D875B03F96AAD4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,15 +123,36 @@
 				A8165B7C25EBB28C00B32938 /* City.m */,
 				A8165B7F25EBB4D100B32938 /* Airport.h */,
 				A8165B8025EBB4D100B32938 /* Airport.m */,
+				A887DF3125F667E0003CAA36 /* Ticket.h */,
+				A887DF3225F667E0003CAA36 /* Ticket.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A81816B825F69EA800D00991 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A83F856E25F134BC00FD1B92 /* PlaceViewController.h */,
+				A83F856F25F134BC00FD1B92 /* PlaceViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A81816BA25F69EBC00D00991 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8A0560725F67A6E006014EA /* TicketsViewController.h */,
+				A8A0560825F67A6E006014EA /* TicketsViewController.m */,
+				A8A0560025F673F9006014EA /* TicketTableViewCell.h */,
+				A8A0560125F673F9006014EA /* TicketTableViewCell.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A841E79B25EE666300174160 /* Place */ = {
 			isa = PBXGroup;
 			children = (
-				A83F856E25F134BC00FD1B92 /* PlaceViewController.h */,
-				A83F856F25F134BC00FD1B92 /* PlaceViewController.m */,
+				A81816B825F69EA800D00991 /* ViewController */,
 			);
 			path = Place;
 			sourceTree = "<group>";
@@ -119,9 +169,10 @@
 		A8534A1625EE5D90005D0F5E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A82B755D25F3DC28004E3B77 /* SearchRequest.h */,
+				A8A0560525F67858006014EA /* AirLineLogo.h */,
 				A8534A1725EE5DA1005D0F5E /* Main */,
 				A841E79B25EE666300174160 /* Place */,
+				A8A055FF25F6738F006014EA /* Tickets */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -129,6 +180,7 @@
 		A8534A1725EE5DA1005D0F5E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A82B755D25F3DC28004E3B77 /* SearchRequest.h */,
 				A8534A1825EE5DB9005D0F5E /* ViewController */,
 				A8165B7525EBB13A00B32938 /* Models */,
 				A8534A1925EE5DD4005D0F5E /* Services */,
@@ -150,6 +202,8 @@
 			children = (
 				A8165B8325EBB64900B32938 /* DataManager.h */,
 				A8165B8425EBB64900B32938 /* DataManager.m */,
+				A887DF2B25F65798003CAA36 /* APIManager.h */,
+				A887DF2C25F65798003CAA36 /* APIManager.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -166,6 +220,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		A8A055FF25F6738F006014EA /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				A81816BA25F69EBC00D00991 /* ViewController */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
 		A8E8710425EE602B0005502A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +238,14 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		DE2F18765D875B03F96AAD4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4A2B9391A9AE70BFDE6250 /* Pods_SearchForAirTickets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A81495F325EAB45C00C855F0 /* Build configuration list for PBXNativeTarget "SearchForAirTickets" */;
 			buildPhases = (
+				760E7E2278742FA9A53D1413 /* [CP] Check Pods Manifest.lock */,
 				A81495D625EAB45800C855F0 /* Sources */,
 				A81495D725EAB45800C855F0 /* Frameworks */,
 				A81495D825EAB45800C855F0 /* Resources */,
+				858964185B805DC17E1D8BEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,6 +314,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		760E7E2278742FA9A53D1413 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SearchForAirTickets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		858964185B805DC17E1D8BEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchForAirTickets/Pods-SearchForAirTickets-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchForAirTickets/Pods-SearchForAirTickets-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchForAirTickets/Pods-SearchForAirTickets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A81495D625EAB45800C855F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -249,9 +363,13 @@
 			files = (
 				A81495E525EAB45800C855F0 /* MainViewController.m in Sources */,
 				A81495DF25EAB45800C855F0 /* AppDelegate.m in Sources */,
+				A887DF2D25F65798003CAA36 /* APIManager.m in Sources */,
 				A8165B8125EBB4D100B32938 /* Airport.m in Sources */,
+				A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */,
 				A8165B7D25EBB28C00B32938 /* City.m in Sources */,
+				A887DF3325F667E0003CAA36 /* Ticket.m in Sources */,
 				A83F857025F134BC00FD1B92 /* PlaceViewController.m in Sources */,
+				A8A0560925F67A6E006014EA /* TicketsViewController.m in Sources */,
 				A81495F025EAB45C00C855F0 /* main.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
 				A8165B7825EBB1A400B32938 /* Country.m in Sources */,
@@ -386,6 +504,7 @@
 		};
 		A81495F425EAB45C00C855F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07425C38CC0E2EA7C84A1027 /* Pods-SearchForAirTickets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -403,6 +522,7 @@
 		};
 		A81495F525EAB45C00C855F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AE8017B8F29701AA4EE611A /* Pods-SearchForAirTickets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
