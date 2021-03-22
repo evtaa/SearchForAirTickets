@@ -28,6 +28,7 @@
 		A887DF3325F667E0003CAA36 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF3225F667E0003CAA36 /* Ticket.m */; };
 		A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560125F673F9006014EA /* TicketTableViewCell.m */; };
 		A8A0560925F67A6E006014EA /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560825F67A6E006014EA /* TicketsViewController.m */; };
+		A8C2246C26027A370074122D /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C2246B26027A370074122D /* TabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		A8A0560525F67858006014EA /* AirLineLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirLineLogo.h; sourceTree = "<group>"; };
 		A8A0560725F67A6E006014EA /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
 		A8A0560825F67A6E006014EA /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
+		A8C2246A26027A370074122D /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		A8C2246B26027A370074122D /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		CA4A2B9391A9AE70BFDE6250 /* Pods_SearchForAirTickets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchForAirTickets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,6 +199,7 @@
 				A841E79B25EE666300174160 /* Place */,
 				A8A055FF25F6738F006014EA /* Tickets */,
 				A82CC57B25FCEC5E0038E540 /* Map */,
+				A8C22469260279D70074122D /* TabBar */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -249,6 +253,15 @@
 				A81816BA25F69EBC00D00991 /* ViewController */,
 			);
 			path = Tickets;
+			sourceTree = "<group>";
+		};
+		A8C22469260279D70074122D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A8C2246A26027A370074122D /* TabBarController.h */,
+				A8C2246B26027A370074122D /* TabBarController.m */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		A8E8710425EE602B0005502A /* JSON */ = {
@@ -397,6 +410,7 @@
 				A8A0560925F67A6E006014EA /* TicketsViewController.m in Sources */,
 				A81495F025EAB45C00C855F0 /* main.m in Sources */,
 				A82CC57925FCEC540038E540 /* MapViewController.m in Sources */,
+				A8C2246C26027A370074122D /* TabBarController.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
 				A8165B7825EBB1A400B32938 /* Country.m in Sources */,
 			);
