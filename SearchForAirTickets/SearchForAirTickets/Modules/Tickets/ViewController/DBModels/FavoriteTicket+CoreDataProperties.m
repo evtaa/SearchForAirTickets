@@ -2,7 +2,7 @@
 //  FavoriteTicket+CoreDataProperties.m
 //  
 //
-//  Created by Alexandr Evtodiy on 20.03.2021.
+//  Created by Alexandr Evtodiy on 21.03.2021.
 //
 //
 
@@ -14,14 +14,14 @@
 	return [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
 }
 
+@dynamic airline;
 @dynamic created;
 @dynamic departure;
 @dynamic expires;
-@dynamic returnDate;
-@dynamic airline;
-@dynamic from;
-@dynamic to;
-@dynamic price;
 @dynamic flightNumber;
+@dynamic from;
+@dynamic price;
+@dynamic returnDate;
+@dynamic to;
 
 @end

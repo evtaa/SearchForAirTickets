@@ -10,5 +10,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[CoreDataHelper setup]:CoreDataHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.persistentStoreCoordinator">
+            </PersistentString>
+            <PersistentString
+               value = " self.managedObjectModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

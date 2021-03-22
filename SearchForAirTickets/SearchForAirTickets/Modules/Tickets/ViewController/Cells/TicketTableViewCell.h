@@ -8,11 +8,13 @@
 #import <UIKit/UIKit.h>
 #import "Ticket.h"
 #import "FavoriteTicket+CoreDataClass.h"
+#import "FavoriteMapPrice+CoreDataClass.h"
 
 @interface TicketTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) Ticket *ticket;
 @property (nonatomic, strong) FavoriteTicket *favoriteTicket;
+@property (nonatomic, strong) FavoriteMapPrice *favoriteMapPrice;
 
 @end
 

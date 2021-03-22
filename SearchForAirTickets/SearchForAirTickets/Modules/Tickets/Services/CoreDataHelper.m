@@ -27,13 +27,13 @@
 }
 
 - (void)setup {
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"FavoriteTicket" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"air" withExtension:@"momd"];
     self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     
     NSURL *docsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [docsURL URLByAppendingPathComponent:@"base.sqlite"];
     self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    
+        
     NSPersistentStore* store = [self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:nil];
     if (!store) {
         abort();
@@ -50,6 +50,8 @@
         NSLog(@"%@", [error localizedDescription]);
     }
 }
+
+#pragma mark - Functions for ticket
 
 - (FavoriteTicket *)favoriteFromTicket:(Ticket *)ticket {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
@@ -85,6 +87,58 @@
 
 - (NSArray *)favorites {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
+    return [self.managedObjectContext executeFetchRequest:request error:nil];
+}
+
+#pragma mark - Functions for mapPrices
+
+- (FavoriteMapPrice *)favoriteFromMapPrice:(MapPrice *) price {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteMapPrice"];
+    request.predicate = [NSPredicate predicateWithFormat:
+                         @"numberOfChanges == %ld AND distance == %ld AND value == %ld AND codeOfDestination == %@ AND codeOfOrigin == %@ AND nameOfDestination == %@ AND nameOfOrigin == %@ AND departure == %@",
+                         (long)price.numberOfChanges,
+                         (long)price.distance,
+                         (long)price.value,
+                         price.destination.code,
+                         price.origin.code,
+                         price.destination.name,
+                         price.origin.name,
+                         price.departure];
+
+    return [[self.managedObjectContext executeFetchRequest:request error:nil] firstObject];
+}
+
+- (BOOL)isFavoriteMapPrice:(MapPrice *)price {
+    return [self favoriteFromMapPrice:price] != nil;
+}
+
+- (void)addToFavoriteMapPrice:(MapPrice *)price {
+    FavoriteMapPrice *favorite = [NSEntityDescription insertNewObjectForEntityForName:@"FavoriteMapPrice" inManagedObjectContext:_managedObjectContext];
+    favorite.numberOfChanges = price.numberOfChanges;
+    favorite.distance = price.distance;
+    favorite.value = price.value;
+    favorite.codeOfDestination = price.destination.code;
+    favorite.codeOfOrigin = price.origin.code;
+    favorite.nameOfDestination = price.destination.name;
+    favorite.nameOfOrigin = price.origin.name;
+    favorite.actual = price.actual;
+    favorite.created = [NSDate date];
+    favorite.departure = price.departure;
+    favorite.returnDate = price.returnDate;
+    [self save];
+}
+
+- (void)removeFromFavoriteMapPrice:(MapPrice *)price {
+    FavoriteMapPrice *favorite = [self favoriteFromMapPrice:price];
+    if (favorite) {
+        [self.managedObjectContext deleteObject:favorite];
+        [self save];
+    }
+}
+
+- (NSArray *)favoritesMapPrice {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteMapPrice"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
     return [self.managedObjectContext executeFetchRequest:request error:nil];
 }
