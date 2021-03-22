@@ -24,6 +24,10 @@
 		A841E79625EE617800174160 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79325EE617800174160 /* airports.json */; };
 		A841E79725EE617800174160 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79425EE617800174160 /* cities.json */; };
 		A841E79825EE617800174160 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79525EE617800174160 /* countries.json */; };
+		A85CEC0F26065CD30003E7B1 /* FavoriteTicket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A85CEC0D26065CD30003E7B1 /* FavoriteTicket.xcdatamodeld */; };
+		A85CEC15260663170003E7B1 /* FavoriteTicket+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CEC11260663170003E7B1 /* FavoriteTicket+CoreDataClass.m */; };
+		A85CEC16260663170003E7B1 /* FavoriteTicket+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CEC13260663170003E7B1 /* FavoriteTicket+CoreDataProperties.m */; };
+		A85CEC1B260670850003E7B1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CEC1A260670850003E7B1 /* CoreDataHelper.m */; };
 		A887DF2D25F65798003CAA36 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF2C25F65798003CAA36 /* APIManager.m */; };
 		A887DF3325F667E0003CAA36 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF3225F667E0003CAA36 /* Ticket.m */; };
 		A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560125F673F9006014EA /* TicketTableViewCell.m */; };
@@ -63,6 +67,13 @@
 		A841E79325EE617800174160 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
 		A841E79425EE617800174160 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		A841E79525EE617800174160 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		A85CEC0E26065CD30003E7B1 /* FavoriteTicket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteTicket.xcdatamodel; sourceTree = "<group>"; };
+		A85CEC11260663170003E7B1 /* FavoriteTicket+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteTicket+CoreDataClass.m"; path = "SearchForAirTickets/Modules/Tickets/FavoriteTicket+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		A85CEC12260663170003E7B1 /* FavoriteTicket+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FavoriteTicket+CoreDataProperties.h"; path = "SearchForAirTickets/Modules/Tickets/FavoriteTicket+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		A85CEC13260663170003E7B1 /* FavoriteTicket+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteTicket+CoreDataProperties.m"; path = "SearchForAirTickets/Modules/Tickets/FavoriteTicket+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		A85CEC14260663170003E7B1 /* FavoriteTicket+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FavoriteTicket+CoreDataClass.h"; path = "SearchForAirTickets/Modules/Tickets/FavoriteTicket+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		A85CEC19260670850003E7B1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		A85CEC1A260670850003E7B1 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		A887DF2B25F65798003CAA36 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		A887DF2C25F65798003CAA36 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		A887DF3125F667E0003CAA36 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
@@ -135,8 +146,6 @@
 				A8165B7C25EBB28C00B32938 /* City.m */,
 				A8165B7F25EBB4D100B32938 /* Airport.h */,
 				A8165B8025EBB4D100B32938 /* Airport.m */,
-				A887DF3125F667E0003CAA36 /* Ticket.h */,
-				A887DF3225F667E0003CAA36 /* Ticket.m */,
 				A82CC57325FCE7330038E540 /* MapPrice.h */,
 				A82CC57425FCE7330038E540 /* MapPrice.m */,
 			);
@@ -157,8 +166,9 @@
 			children = (
 				A8A0560725F67A6E006014EA /* TicketsViewController.h */,
 				A8A0560825F67A6E006014EA /* TicketsViewController.m */,
-				A8A0560025F673F9006014EA /* TicketTableViewCell.h */,
-				A8A0560125F673F9006014EA /* TicketTableViewCell.m */,
+				A85CEC0526065B300003E7B1 /* Cells */,
+				A85CEC0726065B680003E7B1 /* Models */,
+				A85CEC0626065B4A0003E7B1 /* DBModels */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -247,10 +257,50 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		A85CEC0526065B300003E7B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A8A0560025F673F9006014EA /* TicketTableViewCell.h */,
+				A8A0560125F673F9006014EA /* TicketTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A85CEC0626065B4A0003E7B1 /* DBModels */ = {
+			isa = PBXGroup;
+			children = (
+				A85CEC12260663170003E7B1 /* FavoriteTicket+CoreDataProperties.h */,
+				A85CEC13260663170003E7B1 /* FavoriteTicket+CoreDataProperties.m */,
+				A85CEC14260663170003E7B1 /* FavoriteTicket+CoreDataClass.h */,
+				A85CEC11260663170003E7B1 /* FavoriteTicket+CoreDataClass.m */,
+				A85CEC0D26065CD30003E7B1 /* FavoriteTicket.xcdatamodeld */,
+			);
+			path = DBModels;
+			sourceTree = "<group>";
+		};
+		A85CEC0726065B680003E7B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A887DF3125F667E0003CAA36 /* Ticket.h */,
+				A887DF3225F667E0003CAA36 /* Ticket.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A85CEC18260670490003E7B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A85CEC19260670850003E7B1 /* CoreDataHelper.h */,
+				A85CEC1A260670850003E7B1 /* CoreDataHelper.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A8A055FF25F6738F006014EA /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
 				A81816BA25F69EBC00D00991 /* ViewController */,
+				A85CEC18260670490003E7B1 /* Services */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -398,11 +448,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A81495E525EAB45800C855F0 /* MainViewController.m in Sources */,
+				A85CEC0F26065CD30003E7B1 /* FavoriteTicket.xcdatamodeld in Sources */,
 				A81495DF25EAB45800C855F0 /* AppDelegate.m in Sources */,
 				A887DF2D25F65798003CAA36 /* APIManager.m in Sources */,
 				A8165B8125EBB4D100B32938 /* Airport.m in Sources */,
 				A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */,
 				A8165B7D25EBB28C00B32938 /* City.m in Sources */,
+				A85CEC16260663170003E7B1 /* FavoriteTicket+CoreDataProperties.m in Sources */,
 				A82CC57525FCE7330038E540 /* MapPrice.m in Sources */,
 				A887DF3325F667E0003CAA36 /* Ticket.m in Sources */,
 				A82CC57025FCD9270038E540 /* LocationService.m in Sources */,
@@ -411,7 +463,9 @@
 				A81495F025EAB45C00C855F0 /* main.m in Sources */,
 				A82CC57925FCEC540038E540 /* MapViewController.m in Sources */,
 				A8C2246C26027A370074122D /* TabBarController.m in Sources */,
+				A85CEC15260663170003E7B1 /* FavoriteTicket+CoreDataClass.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
+				A85CEC1B260670850003E7B1 /* CoreDataHelper.m in Sources */,
 				A8165B7825EBB1A400B32938 /* Country.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +654,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A85CEC0D26065CD30003E7B1 /* FavoriteTicket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A85CEC0E26065CD30003E7B1 /* FavoriteTicket.xcdatamodel */,
+			);
+			currentVersion = A85CEC0E26065CD30003E7B1 /* FavoriteTicket.xcdatamodel */;
+			path = FavoriteTicket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A81495D225EAB45800C855F0 /* Project object */;
 }
