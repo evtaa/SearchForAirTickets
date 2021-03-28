@@ -17,6 +17,7 @@
 @interface CoreDataHelper : NSObject
 + (instancetype)sharedInstance;
 
+- (FavoriteTicket *)favoriteFromTicket:(Ticket *)ticket;
 - (BOOL)isFavorite:(Ticket *)ticket;
 - (void)addToFavorite:(Ticket *)ticket;
 - (void)removeFromFavorite:(Ticket *)ticket;

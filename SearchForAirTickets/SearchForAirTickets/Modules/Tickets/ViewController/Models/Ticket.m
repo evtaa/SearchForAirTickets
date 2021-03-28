@@ -22,6 +22,21 @@
     return self;
 }
 
+- (instancetype)initWithUserInfo:(NSDictionary *)userInfo {
+    self = [super init];
+    if (self) {
+        _price = [userInfo valueForKey:@"price"];
+        _airline = [userInfo valueForKey:@"airline"];
+        _departure = [userInfo valueForKey:@"departure"];
+        _expires = [userInfo valueForKey:@"expires"];
+        _flightNumber = [userInfo valueForKey:@"flightNumber"];
+        _returnDate = [userInfo valueForKey:@"returnDate"];
+        _from = [userInfo valueForKey:@"from"];
+        _to = [userInfo valueForKey:@"to"];
+    }
+    return self;
+}
+
 NSDate *dateFromString(NSString *dateString) {
     if (!dateString) { return  nil; }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -30,6 +45,5 @@ NSDate *dateFromString(NSString *dateString) {
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     return [dateFormatter dateFromString: correctSrtingDate];
 }
-
 
 @end

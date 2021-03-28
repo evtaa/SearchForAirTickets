@@ -10,6 +10,7 @@
 #import "TicketTableViewCell.h"
 #import "CoreDataHelper.h"
 #import "NotificationCenter.h"
+#import "DetailsTicketViewController.h"
 
 @interface TicketsViewController ()
 @property (nonatomic, strong) NSArray *tickets;
@@ -47,7 +48,7 @@
 - (instancetype)initWithTickets:(NSArray *)tickets {
     self = [super init];
     if (self)
-    {
+    {   
         self.tickets = tickets;
         self.title = @"Билеты";
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -56,7 +57,6 @@
         self.datePicker = [[UIDatePicker alloc] init];
         self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
         self.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-        //self.datePicker.minimumDate = [NSDate date];
         
         self.dateTextField = [[UITextField alloc] initWithFrame:self.view.bounds];
         self.dateTextField.hidden = YES;
@@ -141,7 +141,6 @@
     } else {
         cell.ticket = [self.tickets objectAtIndex:indexPath.row];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -151,31 +150,48 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (isFavorites) return;
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *favoriteAction;
-    if ([[CoreDataHelper sharedInstance] isFavorite: [self.tickets objectAtIndex:indexPath.row]]) {
-        favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            [[CoreDataHelper sharedInstance] removeFromFavorite:[self.tickets objectAtIndex:indexPath.row]];
-        }];
+    if (isFavorites) {
+        DetailsTicketViewController *detailsTicketViewController = [[DetailsTicketViewController alloc] init];
+        switch (self.typeFavorites) {
+            case TypeFavoritesTicket:
+                detailsTicketViewController.favoriteTicket = [self.tickets objectAtIndex:indexPath.row];
+                break;
+            case TypeFavoritesMapPrice:
+                detailsTicketViewController.favoriteMapPrice = [self.tickets objectAtIndex:indexPath.row];
+                break;
+            default:
+                break;
+        }
+        [self.navigationController pushViewController:detailsTicketViewController animated:true];
     } else {
-        favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[CoreDataHelper sharedInstance] addToFavorite:[self.tickets objectAtIndex:indexPath.row]];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *favoriteAction;
+        if ([[CoreDataHelper sharedInstance] isFavorite: [self.tickets objectAtIndex:indexPath.row]]) {
+            favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [[CoreDataHelper sharedInstance] removeFromFavorite:[self.tickets objectAtIndex:indexPath.row]];
+            }];
+        } else {
+            favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[CoreDataHelper sharedInstance] addToFavorite:[self.tickets objectAtIndex:indexPath.row]];
+            }];
+        }
+        
+        UIAlertAction *notificationAction = [UIAlertAction actionWithTitle:@"Напомнить" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            if (![[CoreDataHelper sharedInstance] isFavorite: [self.tickets objectAtIndex:indexPath.row]]) {
+                [[CoreDataHelper sharedInstance] addToFavorite:[self.tickets objectAtIndex:indexPath.row]];
+            }
+            self->notificationCell = [tableView cellForRowAtIndexPath:indexPath];
+            self.datePicker.date = [NSDate date];
+            self.datePicker.minimumDate = [NSDate date];
+            [self.dateTextField becomeFirstResponder];
         }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:favoriteAction];
+        [alertController addAction:cancelAction];
+        [alertController addAction:notificationAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
-    
-    UIAlertAction *notificationAction = [UIAlertAction actionWithTitle:@"Напомнить" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        self->notificationCell = [tableView cellForRowAtIndexPath:indexPath];
-        self.datePicker.date = [NSDate date];
-        self.datePicker.minimumDate = [NSDate date];
-        [self.dateTextField becomeFirstResponder];
-    }];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
-    [alertController addAction:favoriteAction];
-    [alertController addAction:cancelAction];
-    [alertController addAction:notificationAction];
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - Actions For
@@ -197,20 +213,40 @@
             imageURL = [NSURL fileURLWithPath:path];
         }
         
-        Notification notification = NotificationMake(@"Напоминание о билете", message, self.datePicker.date, imageURL);
+        NSArray *values = [NSArray arrayWithObjects: notificationCell.ticket.price,
+                           notificationCell.ticket.airline,
+                           notificationCell.ticket.departure,
+                           notificationCell.ticket.expires,
+                           notificationCell.ticket.flightNumber,
+                           notificationCell.ticket.returnDate,
+                           notificationCell.ticket.from,
+                           notificationCell.ticket.to,
+                           nil];
+        NSArray *keys = [NSArray arrayWithObjects: @"price",
+                         @"airline",
+                         @"departure",
+                         @"expires",
+                         @"flightNumber",
+                         @"returnDate",
+                         @"from",
+                         @"to",
+                         nil];
+        
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+        Notification notification = NotificationMake(@"Напоминание о билете", message, self.datePicker.date, imageURL, userInfo);
         [[NotificationCenter sharedInstance] sendNotification:notification];
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Успешно" message:[NSString stringWithFormat:@"Уведомление будет отправлено - %@", self.datePicker.date] preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            self.datePicker.date = [NSDate date];
+            self->notificationCell = nil;
+            [self.view endEditing:YES];
+            [self.dateTextField endEditing:YES];
+        }];
         [alertController addAction:cancelAction];
         
         [self presentViewController:alertController animated:YES completion:nil];
     }
-        self.datePicker.date = [NSDate date];
-        notificationCell = nil;
-        [self.view endEditing:YES];
-        [self.dateTextField endEditing:YES];
 }
-
 
 @end

@@ -26,6 +26,7 @@
 		A841E79825EE617800174160 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A841E79525EE617800174160 /* countries.json */; };
 		A8426D5B2608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8426D572608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m */; };
 		A8426D5C2608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A8426D592608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m */; };
+		A8568283260F8B9A004AB5B8 /* DetailsTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8568282260F8B9A004AB5B8 /* DetailsTicketViewController.m */; };
 		A85CEC1B260670850003E7B1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CEC1A260670850003E7B1 /* CoreDataHelper.m */; };
 		A85E4D43260CB39700040B13 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D42260CB39700040B13 /* ProgressView.m */; };
 		A85E4D55260CE1F100040B13 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D54260CE1F100040B13 /* ContentViewController.m */; };
@@ -77,6 +78,9 @@
 		A8426D582608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteMapPrice+CoreDataClass.h"; sourceTree = "<group>"; };
 		A8426D592608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteMapPrice+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A8426D5A2608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteMapPrice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A8568281260F8B9A004AB5B8 /* DetailsTicketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsTicketViewController.h; sourceTree = "<group>"; };
+		A8568282260F8B9A004AB5B8 /* DetailsTicketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsTicketViewController.m; sourceTree = "<group>"; };
+		A8568287260F8D32004AB5B8 /* TypeFavorites.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeFavorites.h; sourceTree = "<group>"; };
 		A85CEC19260670850003E7B1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		A85CEC1A260670850003E7B1 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		A85E4D41260CB39700040B13 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				A8534A1725EE5DA1005D0F5E /* Main */,
 				A841E79B25EE666300174160 /* Place */,
 				A8A055FF25F6738F006014EA /* Tickets */,
+				A856827F260F8ACB004AB5B8 /* DetailsTicket */,
 				A82CC57B25FCEC5E0038E540 /* Map */,
 				A8C22469260279D70074122D /* TabBar */,
 				A85CEC18260670490003E7B1 /* Services */,
@@ -283,6 +288,23 @@
 				A81495EF25EAB45C00C855F0 /* main.m */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A856827F260F8ACB004AB5B8 /* DetailsTicket */ = {
+			isa = PBXGroup;
+			children = (
+				A8568280260F8AF5004AB5B8 /* ViewController */,
+			);
+			path = DetailsTicket;
+			sourceTree = "<group>";
+		};
+		A8568280260F8AF5004AB5B8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8568281260F8B9A004AB5B8 /* DetailsTicketViewController.h */,
+				A8568282260F8B9A004AB5B8 /* DetailsTicketViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A85CEC0526065B300003E7B1 /* Cells */ = {
@@ -399,6 +421,7 @@
 		A8A055FF25F6738F006014EA /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
+				A8568287260F8D32004AB5B8 /* TypeFavorites.h */,
 				A8A0560525F67858006014EA /* AirLineLogo.h */,
 				A81816BA25F69EBC00D00991 /* ViewController */,
 			);
@@ -585,6 +608,7 @@
 				A8426D5C2608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m in Sources */,
 				A82CC57925FCEC540038E540 /* MapViewController.m in Sources */,
 				A8C2246C26027A370074122D /* TabBarController.m in Sources */,
+				A8568283260F8B9A004AB5B8 /* DetailsTicketViewController.m in Sources */,
 				A88932932607D50400F74D90 /* air.xcdatamodeld in Sources */,
 				A8426D5B2608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
