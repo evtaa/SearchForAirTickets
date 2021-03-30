@@ -107,4 +107,16 @@
     [self.airlineLogoView yy_setImageWithURL:urlLogo options:YYWebImageOptionSetImageWithFadeAnimation];
 }
 
+- (void)setFavoriteMapPrice:(FavoriteMapPrice *)favoriteMapPrice {
+    favoriteMapPrice = favoriteMapPrice;
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteMapPrice.value];
+    self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteMapPrice.codeOfOrigin, favoriteMapPrice.codeOfDestination];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
+    self.dateLabel.text = [dateFormatter stringFromDate:favoriteMapPrice.departure];
+    self.airlineLogoView.image = [[UIImage alloc] init];
+}
+
 @end

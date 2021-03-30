@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H524" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="FavoriteMapPrice" representedClassName="FavoriteMapPrice" syncable="YES">
+        <attribute name="actual" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="codeOfDestination" optional="YES" attributeType="String"/>
+        <attribute name="codeOfOrigin" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="departure" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="distance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nameOfDestination" optional="YES" attributeType="String"/>
+        <attribute name="nameOfOrigin" optional="YES" attributeType="String"/>
+        <attribute name="numberOfChanges" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="returnDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="FavoriteTicket" representedClassName="FavoriteTicket" syncable="YES">
+        <attribute name="airline" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="departure" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="expires" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="flightNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="from" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="returnDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="to" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="FavoriteMapPrice" positionX="126.26953125" positionY="11.8359375" width="128" height="208"/>
+        <element name="FavoriteTicket" positionX="-36" positionY="9" width="128" height="178"/>
+    </elements>
+</model>
