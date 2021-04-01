@@ -10,6 +10,7 @@
 #import "APIManager.h"
 #import <YYWebImage/YYWebImage.h>
 #import "AirLineLogo.h"
+#import "NSString+Localize.h"
 
 @interface TicketTableViewCell ()
 @property (nonatomic, strong) UILabel *priceLabel;
@@ -91,7 +92,7 @@
 - (void)setTicket:(Ticket *)ticket {
     _ticket = ticket;
     self.contentView.alpha = 0.0;
-    self.priceLabel.text = [NSString stringWithFormat:@"%@ руб.", ticket.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"%@ %@", ticket.price, [@"reduction_rubles" localize]];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", ticket.from, ticket.to];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -105,7 +106,7 @@
 - (void)setFavoriteTicket:(FavoriteTicket *)favoriteTicket {
     _favoriteTicket = favoriteTicket;
     self.contentView.alpha = 0.0;
-    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteTicket.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld %@", favoriteTicket.price, [@"reduction_rubles" localize]];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteTicket.from, favoriteTicket.to];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -119,7 +120,7 @@
 - (void)setFavoriteMapPrice:(FavoriteMapPrice *)favoriteMapPrice {
     _favoriteMapPrice = favoriteMapPrice;
     self.contentView.alpha = 0.0;
-    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteMapPrice.value];
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld %@", favoriteMapPrice.value, [@"reduction_rubles" localize]];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteMapPrice.codeOfOrigin, favoriteMapPrice.codeOfDestination];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

@@ -31,6 +31,9 @@
 		A85E4D43260CB39700040B13 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D42260CB39700040B13 /* ProgressView.m */; };
 		A85E4D55260CE1F100040B13 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D54260CE1F100040B13 /* ContentViewController.m */; };
 		A85E4D5B260CF34900040B13 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D5A260CF34900040B13 /* FirstViewController.m */; };
+		A869D78B2614C3BE00C05D63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A869D78D2614C3BE00C05D63 /* Localizable.strings */; };
+		A869D7962614C73400C05D63 /* NSString+Localize.m in Sources */ = {isa = PBXBuildFile; fileRef = A869D7952614C73400C05D63 /* NSString+Localize.m */; };
+		A869D7A12614D44F00C05D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A869D7A32614D44F00C05D63 /* InfoPlist.strings */; };
 		A887DF2D25F65798003CAA36 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF2C25F65798003CAA36 /* APIManager.m */; };
 		A887DF3325F667E0003CAA36 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF3225F667E0003CAA36 /* Ticket.m */; };
 		A88932932607D50400F74D90 /* air.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A88932912607D50400F74D90 /* air.xcdatamodeld */; };
@@ -89,6 +92,13 @@
 		A85E4D54260CE1F100040B13 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		A85E4D59260CF34900040B13 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		A85E4D5A260CF34900040B13 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A869D7872614C17400C05D63 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A869D78C2614C3BE00C05D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A869D7902614C3DD00C05D63 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A869D7942614C73400C05D63 /* NSString+Localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Localize.h"; sourceTree = "<group>"; };
+		A869D7952614C73400C05D63 /* NSString+Localize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Localize.m"; sourceTree = "<group>"; };
+		A869D7A22614D44F00C05D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A869D7AD2614D49E00C05D63 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A887DF2B25F65798003CAA36 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		A887DF2C25F65798003CAA36 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		A887DF3125F667E0003CAA36 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
@@ -98,6 +108,7 @@
 		A88932962607D64B00F74D90 /* FavoriteTicket+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteTicket+CoreDataProperties.m"; path = "SearchForAirTickets/Modules/Tickets/ViewController/DBModels/FavoriteTicket+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
 		A88932972607D64B00F74D90 /* FavoriteTicket+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FavoriteTicket+CoreDataClass.m"; path = "SearchForAirTickets/Modules/Tickets/ViewController/DBModels/FavoriteTicket+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
 		A88932982607D64B00F74D90 /* FavoriteTicket+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FavoriteTicket+CoreDataClass.h"; path = "SearchForAirTickets/Modules/Tickets/ViewController/DBModels/FavoriteTicket+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		A892F28F2613572B00949C3A /* SearchForAirTickets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SearchForAirTickets.entitlements; sourceTree = "<group>"; };
 		A8A0560025F673F9006014EA /* TicketTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketTableViewCell.h; sourceTree = "<group>"; };
 		A8A0560125F673F9006014EA /* TicketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketTableViewCell.m; sourceTree = "<group>"; };
 		A8A0560525F67858006014EA /* AirLineLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirLineLogo.h; sourceTree = "<group>"; };
@@ -152,8 +163,10 @@
 		A81495DC25EAB45800C855F0 /* SearchForAirTickets */ = {
 			isa = PBXGroup;
 			children = (
+				A892F28F2613572B00949C3A /* SearchForAirTickets.entitlements */,
 				A8534A1525EE5D64005D0F5E /* App */,
 				A8534A1625EE5D90005D0F5E /* Modules */,
+				A85CEC18260670490003E7B1 /* Services */,
 				A8534A1A25EE5E1D005D0F5E /* Resource */,
 			);
 			path = SearchForAirTickets;
@@ -242,7 +255,6 @@
 				A856827F260F8ACB004AB5B8 /* DetailsTicket */,
 				A82CC57B25FCEC5E0038E540 /* Map */,
 				A8C22469260279D70074122D /* TabBar */,
-				A85CEC18260670490003E7B1 /* Services */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -339,11 +351,11 @@
 		A85CEC18260670490003E7B1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A869D7932614C66A00C05D63 /* Localized */,
 				A8F7D139260DDED800E61D31 /* NotificationCenter */,
 				A8F7D138260DDEC500E61D31 /* CoreData */,
 			);
-			name = Services;
-			path = Tickets/Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A85E4D40260CB36100040B13 /* Animation */ = {
@@ -396,6 +408,17 @@
 				A85E4D5A260CF34900040B13 /* FirstViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A869D7932614C66A00C05D63 /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				A869D7942614C73400C05D63 /* NSString+Localize.h */,
+				A869D7952614C73400C05D63 /* NSString+Localize.m */,
+				A869D78D2614C3BE00C05D63 /* Localizable.strings */,
+				A869D7A32614D44F00C05D63 /* InfoPlist.strings */,
+			);
+			path = Localized;
 			sourceTree = "<group>";
 		};
 		A88932592607C17400F74D90 /* ViewController */ = {
@@ -516,6 +539,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A81495D125EAB45800C855F0;
 			productRefGroup = A81495DB25EAB45800C855F0 /* Products */;
@@ -533,6 +557,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A841E79725EE617800174160 /* cities.json in Resources */,
+				A869D7A12614D44F00C05D63 /* InfoPlist.strings in Resources */,
+				A869D78B2614C3BE00C05D63 /* Localizable.strings in Resources */,
 				A81495ED25EAB45C00C855F0 /* LaunchScreen.storyboard in Resources */,
 				A81495EA25EAB45C00C855F0 /* Assets.xcassets in Resources */,
 				A841E79825EE617800174160 /* countries.json in Resources */,
@@ -613,6 +639,7 @@
 				A8426D5B2608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
 				A85E4D55260CE1F100040B13 /* ContentViewController.m in Sources */,
+				A869D7962614C73400C05D63 /* NSString+Localize.m in Sources */,
 				A85CEC1B260670850003E7B1 /* CoreDataHelper.m in Sources */,
 				A8165B7825EBB1A400B32938 /* Country.m in Sources */,
 				A85E4D43260CB39700040B13 /* ProgressView.m in Sources */,
@@ -626,8 +653,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				A81495EC25EAB45C00C855F0 /* Base */,
+				A869D7872614C17400C05D63 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A869D78D2614C3BE00C05D63 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A869D78C2614C3BE00C05D63 /* en */,
+				A869D7902614C3DD00C05D63 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A869D7A32614D44F00C05D63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A869D7A22614D44F00C05D63 /* en */,
+				A869D7AD2614D49E00C05D63 /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -637,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -696,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -751,6 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SearchForAirTickets/SearchForAirTickets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SearchForAirTickets/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -769,6 +818,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SearchForAirTickets/SearchForAirTickets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SearchForAirTickets/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

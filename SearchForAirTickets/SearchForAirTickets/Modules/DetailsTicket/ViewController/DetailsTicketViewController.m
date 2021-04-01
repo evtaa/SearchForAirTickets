@@ -8,6 +8,7 @@
 #import "DetailsTicketViewController.h"
 #import "AirLineLogo.h"
 #import <YYWebImage/YYWebImage.h>
+#import "NSString+Localize.h"
 
 @interface DetailsTicketViewController ()
 @property (nonatomic, strong) UIView *contentView;
@@ -56,7 +57,7 @@
 }
 
 - (void) setupNavigationController {
-    self.title = @"Избранный билет";
+    self.title = [@"favorite_ticket" localize];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.prefersLargeTitles = YES;
 }
@@ -114,26 +115,26 @@
 }
 
 - (void)setFavoriteTicket:(FavoriteTicket *)favoriteTicket {
-    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteTicket.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld %@", favoriteTicket.price, [@"reduction_rubles" localize]];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteTicket.from, favoriteTicket.to];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
     self.dateLabel.text = [dateFormatter stringFromDate:favoriteTicket.departure];
-    self.createdLabel.text = [NSString stringWithFormat:@"Добавлено %@", [dateFormatter stringFromDate:favoriteTicket.created]];
+    self.createdLabel.text = [NSString stringWithFormat:@"%@ %@",[@"date_of_add" localize], [dateFormatter stringFromDate:favoriteTicket.created]];
     
     NSURL *urlLogo = AirlineLogo(favoriteTicket.airline);
     [self.airlineLogoView yy_setImageWithURL:urlLogo options:YYWebImageOptionSetImageWithFadeAnimation];
 }
 
 - (void)setFavoriteMapPrice:(FavoriteMapPrice *)favoriteMapPrice {
-    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteMapPrice.value];
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld %@", favoriteMapPrice.value, [@"reduction_rubles" localize]];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteMapPrice.codeOfOrigin, favoriteMapPrice.codeOfDestination];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
     self.dateLabel.text = [dateFormatter stringFromDate:favoriteMapPrice.departure];
-    self.createdLabel.text = [NSString stringWithFormat:@"Добавлено %@", [dateFormatter stringFromDate:favoriteMapPrice.created]];
+    self.createdLabel.text = [NSString stringWithFormat:@"%@ %@",[@"date_of_add" localize], [dateFormatter stringFromDate:favoriteMapPrice.created]];
     self.airlineLogoView.image = [[UIImage alloc] init];
 }
 

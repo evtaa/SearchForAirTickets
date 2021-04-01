@@ -7,6 +7,7 @@
 
 #import "LocationService.h"
 #import <UIKit/UIKit.h>
+#import "NSString+Localize.h"
 
 @interface LocationService () <CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -38,8 +39,8 @@
         case kCLAuthorizationStatusNotDetermined:
             break;
         default: {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Упс!" message:@"Не удалось определить текущий город!" preferredStyle: UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[@"error" localize] message:[@"not_determine_current_city" localize] preferredStyle: UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:[@"close" localize] style:(UIAlertActionStyleDefault) handler:nil]];
             [[[UIApplication sharedApplication].windows firstObject].rootViewController presentViewController:alertController animated:YES completion:nil];
         }
     }
