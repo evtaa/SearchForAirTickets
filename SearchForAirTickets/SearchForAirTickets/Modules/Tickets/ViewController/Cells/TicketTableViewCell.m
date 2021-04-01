@@ -27,13 +27,19 @@
     return self;
 }
 
+#pragma mark - Config Cell
+
 - (void)setup {
+    [self setupTicketTableViewCell];
     [self setupContentView];
     [self setupPriceLabel];
     [self setupAirlineLogoView];
     [self setupPlacesLabel];
     [self setupDateLabel];
+}
 
+- (void)setupTicketTableViewCell {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setupContentView {
@@ -42,8 +48,8 @@
     self.contentView.layer.shadowRadius = 10.0;
     self.contentView.layer.shadowOpacity = 1.0;
     self.contentView.layer.cornerRadius = 6.0;
+    self.contentView.alpha = 0.0;
     self.contentView.backgroundColor = [UIColor whiteColor];
-    
 }
 
 - (void)setupPriceLabel {
@@ -80,9 +86,11 @@
     self.dateLabel.frame = CGRectMake(10.0, CGRectGetMaxY(self.placesLabel.frame) + 8.0, self.contentView.frame.size.width - 20.0, 20.0);
 }
 
+#pragma mark - Setting properties
+
 - (void)setTicket:(Ticket *)ticket {
     _ticket = ticket;
-    
+    self.contentView.alpha = 0.0;
     self.priceLabel.text = [NSString stringWithFormat:@"%@ руб.", ticket.price];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", ticket.from, ticket.to];
     
@@ -91,11 +99,12 @@
     self.dateLabel.text = [dateFormatter stringFromDate:ticket.departure];
     NSURL *urlLogo = AirlineLogo(ticket.airline);
     [self.airlineLogoView yy_setImageWithURL:urlLogo options:YYWebImageOptionSetImageWithFadeAnimation];
+    [self animationForCell];
 }
 
 - (void)setFavoriteTicket:(FavoriteTicket *)favoriteTicket {
     _favoriteTicket = favoriteTicket;
-    
+    self.contentView.alpha = 0.0;
     self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteTicket.price];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteTicket.from, favoriteTicket.to];
     
@@ -104,11 +113,12 @@
     self.dateLabel.text = [dateFormatter stringFromDate:favoriteTicket.departure];
     NSURL *urlLogo = AirlineLogo(favoriteTicket.airline);
     [self.airlineLogoView yy_setImageWithURL:urlLogo options:YYWebImageOptionSetImageWithFadeAnimation];
+    [self animationForCell];
 }
 
 - (void)setFavoriteMapPrice:(FavoriteMapPrice *)favoriteMapPrice {
-    favoriteMapPrice = favoriteMapPrice;
-    
+    _favoriteMapPrice = favoriteMapPrice;
+    self.contentView.alpha = 0.0;
     self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteMapPrice.value];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteMapPrice.codeOfOrigin, favoriteMapPrice.codeOfDestination];
     
@@ -116,6 +126,15 @@
     dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
     self.dateLabel.text = [dateFormatter stringFromDate:favoriteMapPrice.departure];
     self.airlineLogoView.image = [[UIImage alloc] init];
+    [self animationForCell];
+}
+
+#pragma mark - Animation
+
+- (void) animationForCell {
+    [UIView animateWithDuration:1.5 animations:^{
+        self.contentView.alpha = 1.0;
+    }];
 }
 
 @end

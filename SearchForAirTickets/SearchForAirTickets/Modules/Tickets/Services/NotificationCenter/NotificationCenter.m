@@ -8,8 +8,13 @@
 #import "NotificationCenter.h"
 #import <UserNotificationsUI/UserNotificationsUI.h>
 #import <UserNotifications/UserNotifications.h>
+#import "TabBarController.h"
+#import "Ticket.h"
+#import "CoreDataHelper.h"
+#import "TicketsViewController.h"
+#import "DetailsTicketViewController.h"
 
-@interface NotificationCenter () <UNUserNotificationCenterDelegate>
+@interface NotificationCenter () <UNUserNotificationCenterDelegate, UITabBarControllerDelegate>
 @end
 
 @implementation NotificationCenter
@@ -50,6 +55,8 @@
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         content.title = notification.title;
         content.body = notification.body;
+        
+        content.userInfo = notification.userInfo;
         content.sound = [UNNotificationSound defaultSound];
         
         if (notification.imageURL) {
@@ -88,16 +95,43 @@
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    Ticket *ticket = [[Ticket alloc] initWithUserInfo:userInfo];
+    if ([[CoreDataHelper sharedInstance] isFavorite:ticket]) {
+        FavoriteTicket *favoriteTicket = [[CoreDataHelper sharedInstance] favoriteFromTicket:ticket];
+        
+        UIWindow *window = [NotificationCenter getKeyWindow];
+        TabBarController *tabBarController = (TabBarController *) window.rootViewController;
+        tabBarController.selectedIndex = 2;
+        
+        DetailsTicketViewController * detailsTicketViewController = [[DetailsTicketViewController alloc] init];
+        detailsTicketViewController.typeFavorite = TypeFavoritesTicket;
+        detailsTicketViewController.favoriteTicket = favoriteTicket;
+        [window.rootViewController.childViewControllers.lastObject.childViewControllers.lastObject.navigationController popToRootViewControllerAnimated:NO];
+        TicketsViewController *ticketsViewController = window.rootViewController.childViewControllers.lastObject.childViewControllers.firstObject;
+        [ticketsViewController.navigationController pushViewController:detailsTicketViewController animated:NO];
+    }
 }
 
-Notification NotificationMake(NSString* _Nullable title, NSString* _Nonnull body, NSDate* _Nonnull date, NSURL * _Nullable  imageURL) {
+Notification NotificationMake(NSString* _Nullable title, NSString* _Nonnull body, NSDate* _Nonnull date, NSURL * _Nullable  imageURL, NSDictionary * _Nullable userInfo) {
     Notification notification;
+    
     notification.title = title;
     notification.body = body;
     notification.date = date;
     notification.imageURL = imageURL;
+    notification.userInfo = userInfo;
     return notification;
+}
+
++ (UIWindow*) getKeyWindow {
+    for (id window in [[UIApplication sharedApplication] windows]) {
+        UIWindow* w = (UIWindow*) window;
+        if (w.keyWindow) {
+            return w;
+        }
+    }
+    return nil;
 }
 
 @end

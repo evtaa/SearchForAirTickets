@@ -3,10 +3,92 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[LocationService locationManagerDidChangeAuthorization:]:LocationService.m">
+         contextName = "-[NotificationCenter sendNotification:]:NotificationCenter.m">
          <PersistentStrings>
             <PersistentString
-               value = "manager.authorizationStatus">
+               value = "newComponents.hour">
+            </PersistentString>
+            <PersistentString
+               value = "newComponents.minute">
+            </PersistentString>
+            <PersistentString
+               value = "notification.userInfo">
+            </PersistentString>
+            <PersistentString
+               value = "content.title">
+            </PersistentString>
+            <PersistentString
+               value = "components.hour">
+            </PersistentString>
+            <PersistentString
+               value = "newComponents.day">
+            </PersistentString>
+            <PersistentString
+               value = "newComponents.month">
+            </PersistentString>
+            <PersistentString
+               value = " content.body">
+            </PersistentString>
+            <PersistentString
+               value = "content.attachments">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[NotificationCenter getKeyWindow]:NotificationCenter.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "window.rootViewController.childViewControllers.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CoreDataHelper setup]:CoreDataHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.persistentStoreCoordinator">
+            </PersistentString>
+            <PersistentString
+               value = " self.managedObjectModel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TicketsViewController tableView:didSelectRowAtIndexPath:]:TicketsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tickets">
+            </PersistentString>
+            <PersistentString
+               value = "favoriteTicket.from">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController presentFirstViewControllerIfNeeded]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "firstViewController.isModalInPresentation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TicketsViewController doneButtonDidTap:]:TicketsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "notificationCell.ticket.airline">
+            </PersistentString>
+            <PersistentString
+               value = "self.datePicker.date">
+            </PersistentString>
+            <PersistentString
+               value = "self.datePicker.minimumDate">
+            </PersistentString>
+            <PersistentString
+               value = "notificationCell.ticket">
+            </PersistentString>
+            <PersistentString
+               value = "notification">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,58 +110,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CoreDataHelper setup]:CoreDataHelper.m">
+         contextName = "-[DetailsTicketViewController setFavoriteTicket:]:DetailsTicketViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.persistentStoreCoordinator">
+               value = "favoriteTicket.from">
             </PersistentString>
             <PersistentString
-               value = " self.managedObjectModel">
+               value = "self.placesLabel.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MainViewController presentFirstViewControllerIfNeeded]:MainViewController.m">
+         contextName = "-[TicketsViewController tableView:cellForRowAtIndexPath:]:TicketsViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "firstViewController.isModalInPresentation">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[NotificationCenter sendNotification:]:NotificationCenter.m">
-         <PersistentStrings>
-            <PersistentString
-               value = " content.body">
-            </PersistentString>
-            <PersistentString
-               value = "newComponents.hour">
-            </PersistentString>
-            <PersistentString
-               value = "content.attachments">
-            </PersistentString>
-            <PersistentString
-               value = "components.hour">
-            </PersistentString>
-            <PersistentString
-               value = "newComponents.month">
-            </PersistentString>
-            <PersistentString
-               value = "newComponents.day">
-            </PersistentString>
-            <PersistentString
-               value = "newComponents.minute">
-            </PersistentString>
-            <PersistentString
-               value = "content.title">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "+[NotificationCenter getKeyWindow]:NotificationCenter.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "window.rootViewController.childViewControllers.count">
+               value = "self.tickets">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -90,30 +135,18 @@
                value = "window.rootViewController.childViewControllers.lastObject">
             </PersistentString>
             <PersistentString
-               value = "window.rootViewController">
+               value = "window.rootViewController.childViewControllers.count">
             </PersistentString>
             <PersistentString
-               value = "window.rootViewController.childViewControllers.count">
+               value = "window.rootViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[TicketsViewController doneButtonDidTap:]:TicketsViewController.m">
+         contextName = "-[LocationService locationManagerDidChangeAuthorization:]:LocationService.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.datePicker.minimumDate">
-            </PersistentString>
-            <PersistentString
-               value = "self.datePicker.date">
-            </PersistentString>
-            <PersistentString
-               value = "notificationCell.ticket.airline">
-            </PersistentString>
-            <PersistentString
-               value = "notificationCell.ticket">
-            </PersistentString>
-            <PersistentString
-               value = "notification">
+               value = "manager.authorizationStatus">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

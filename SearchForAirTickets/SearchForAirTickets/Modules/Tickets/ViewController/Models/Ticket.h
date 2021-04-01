@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Ticket : NSObject
+@interface Ticket : NSObject 
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSString *airline;
 @property (nonatomic, strong) NSDate *departure;
@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *to;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithUserInfo:(NSDictionary *)userInfo;
 
 @end
 

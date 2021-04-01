@@ -6,11 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef enum TypeFavorites {
-    TypeFavoritesTicket,
-    TypeFavoritesMapPrice
-} TypeFavorites;
+#import "TypeFavorites.h"
 
 @interface TicketsViewController : UITableViewController
 - (instancetype)initWithTickets:(NSArray *)tickets;
