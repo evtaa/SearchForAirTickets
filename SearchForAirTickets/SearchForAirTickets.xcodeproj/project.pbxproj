@@ -27,6 +27,9 @@
 		A8426D5B2608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A8426D572608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m */; };
 		A8426D5C2608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A8426D592608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m */; };
 		A85CEC1B260670850003E7B1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A85CEC1A260670850003E7B1 /* CoreDataHelper.m */; };
+		A85E4D43260CB39700040B13 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D42260CB39700040B13 /* ProgressView.m */; };
+		A85E4D55260CE1F100040B13 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D54260CE1F100040B13 /* ContentViewController.m */; };
+		A85E4D5B260CF34900040B13 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85E4D5A260CF34900040B13 /* FirstViewController.m */; };
 		A887DF2D25F65798003CAA36 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF2C25F65798003CAA36 /* APIManager.m */; };
 		A887DF3325F667E0003CAA36 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = A887DF3225F667E0003CAA36 /* Ticket.m */; };
 		A88932932607D50400F74D90 /* air.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A88932912607D50400F74D90 /* air.xcdatamodeld */; };
@@ -35,6 +38,7 @@
 		A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560125F673F9006014EA /* TicketTableViewCell.m */; };
 		A8A0560925F67A6E006014EA /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A0560825F67A6E006014EA /* TicketsViewController.m */; };
 		A8C2246C26027A370074122D /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C2246B26027A370074122D /* TabBarController.m */; };
+		A8F7D13C260DEA9E00E61D31 /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7D13B260DEA9E00E61D31 /* NotificationCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,12 @@
 		A8426D5A2608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteMapPrice+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A85CEC19260670850003E7B1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		A85CEC1A260670850003E7B1 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		A85E4D41260CB39700040B13 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		A85E4D42260CB39700040B13 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		A85E4D53260CE1F100040B13 /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		A85E4D54260CE1F100040B13 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		A85E4D59260CF34900040B13 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		A85E4D5A260CF34900040B13 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		A887DF2B25F65798003CAA36 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		A887DF2C25F65798003CAA36 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		A887DF3125F667E0003CAA36 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
@@ -91,6 +101,8 @@
 		A8A0560825F67A6E006014EA /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
 		A8C2246A26027A370074122D /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		A8C2246B26027A370074122D /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		A8F7D13A260DEA9E00E61D31 /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		A8F7D13B260DEA9E00E61D31 /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		CA4A2B9391A9AE70BFDE6250 /* Pods_SearchForAirTickets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchForAirTickets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -216,7 +228,8 @@
 		A8534A1625EE5D90005D0F5E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A8A0560525F67858006014EA /* AirLineLogo.h */,
+				A85E4D4F260CD98A00040B13 /* InBoarding */,
+				A85E4D40260CB36100040B13 /* Animation */,
 				A8534A1925EE5DD4005D0F5E /* Services */,
 				A8165B7525EBB13A00B32938 /* Models */,
 				A8534A1725EE5DA1005D0F5E /* Main */,
@@ -268,7 +281,6 @@
 				A81495EB25EAB45C00C855F0 /* LaunchScreen.storyboard */,
 				A81495EE25EAB45C00C855F0 /* Info.plist */,
 				A81495EF25EAB45C00C855F0 /* main.m */,
-				A88932912607D50400F74D90 /* air.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -305,11 +317,63 @@
 		A85CEC18260670490003E7B1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A85CEC19260670850003E7B1 /* CoreDataHelper.h */,
-				A85CEC1A260670850003E7B1 /* CoreDataHelper.m */,
+				A8F7D139260DDED800E61D31 /* NotificationCenter */,
+				A8F7D138260DDEC500E61D31 /* CoreData */,
 			);
 			name = Services;
 			path = Tickets/Services;
+			sourceTree = "<group>";
+		};
+		A85E4D40260CB36100040B13 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D41260CB39700040B13 /* ProgressView.h */,
+				A85E4D42260CB39700040B13 /* ProgressView.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		A85E4D4F260CD98A00040B13 /* InBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D57260CF31000040B13 /* First */,
+				A85E4D50260CDA3300040B13 /* Content */,
+			);
+			path = InBoarding;
+			sourceTree = "<group>";
+		};
+		A85E4D50260CDA3300040B13 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D51260CDA3D00040B13 /* ViewController */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		A85E4D51260CDA3D00040B13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D53260CE1F100040B13 /* ContentViewController.h */,
+				A85E4D54260CE1F100040B13 /* ContentViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A85E4D57260CF31000040B13 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D58260CF32400040B13 /* ViewController */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		A85E4D58260CF32400040B13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D59260CF34900040B13 /* FirstViewController.h */,
+				A85E4D5A260CF34900040B13 /* FirstViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A88932592607C17400F74D90 /* ViewController */ = {
@@ -335,6 +399,7 @@
 		A8A055FF25F6738F006014EA /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
+				A8A0560525F67858006014EA /* AirLineLogo.h */,
 				A81816BA25F69EBC00D00991 /* ViewController */,
 			);
 			path = Tickets;
@@ -357,6 +422,25 @@
 				A841E79525EE617800174160 /* countries.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		A8F7D138260DDEC500E61D31 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A85CEC19260670850003E7B1 /* CoreDataHelper.h */,
+				A85CEC1A260670850003E7B1 /* CoreDataHelper.m */,
+				A88932912607D50400F74D90 /* air.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A8F7D139260DDED800E61D31 /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				A8F7D13A260DEA9E00E61D31 /* NotificationCenter.h */,
+				A8F7D13B260DEA9E00E61D31 /* NotificationCenter.m */,
+			);
+			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
 		DE2F18765D875B03F96AAD4F /* Frameworks */ = {
@@ -489,11 +573,13 @@
 				A8165B8125EBB4D100B32938 /* Airport.m in Sources */,
 				A8A0560225F673F9006014EA /* TicketTableViewCell.m in Sources */,
 				A8165B7D25EBB28C00B32938 /* City.m in Sources */,
+				A85E4D5B260CF34900040B13 /* FirstViewController.m in Sources */,
 				A82CC57525FCE7330038E540 /* MapPrice.m in Sources */,
 				A88932992607D64B00F74D90 /* FavoriteTicket+CoreDataProperties.m in Sources */,
 				A887DF3325F667E0003CAA36 /* Ticket.m in Sources */,
 				A82CC57025FCD9270038E540 /* LocationService.m in Sources */,
 				A83F857025F134BC00FD1B92 /* PlaceViewController.m in Sources */,
+				A8F7D13C260DEA9E00E61D31 /* NotificationCenter.m in Sources */,
 				A8A0560925F67A6E006014EA /* TicketsViewController.m in Sources */,
 				A81495F025EAB45C00C855F0 /* main.m in Sources */,
 				A8426D5C2608AAEE00C17568 /* FavoriteMapPrice+CoreDataProperties.m in Sources */,
@@ -502,8 +588,10 @@
 				A88932932607D50400F74D90 /* air.xcdatamodeld in Sources */,
 				A8426D5B2608AAEE00C17568 /* FavoriteMapPrice+CoreDataClass.m in Sources */,
 				A8165B8525EBB64900B32938 /* DataManager.m in Sources */,
+				A85E4D55260CE1F100040B13 /* ContentViewController.m in Sources */,
 				A85CEC1B260670850003E7B1 /* CoreDataHelper.m in Sources */,
 				A8165B7825EBB1A400B32938 /* Country.m in Sources */,
+				A85E4D43260CB39700040B13 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

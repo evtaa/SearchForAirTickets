@@ -15,6 +15,7 @@
 @property (nonatomic, strong) Ticket *ticket;
 @property (nonatomic, strong) FavoriteTicket *favoriteTicket;
 @property (nonatomic, strong) FavoriteMapPrice *favoriteMapPrice;
+@property (nonatomic, strong) UIImageView *airlineLogoView;
 
 @end
 
