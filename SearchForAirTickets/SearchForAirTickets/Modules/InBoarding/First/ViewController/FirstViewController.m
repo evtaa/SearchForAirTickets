@@ -24,6 +24,8 @@
     } contentData[CONTENT_COUNT];
 }
 
+#pragma mark - Life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,6 +53,8 @@
     
 }
 
+#pragma mark - Private
+
 - (void)createContentDataArray {
     NSArray *titles = [NSArray arrayWithObjects:[@"about_app_header" localize], [@"tickets_header" localize], [@"map_price_header" localize], [@"favorites_header" localize], nil];
     NSArray *contents = [NSArray arrayWithObjects:[@"about_app_describe" localize], [@"tickets_describe" localize], [@"map_price_describe" localize], [@"favorites_describe" localize], nil];
@@ -73,12 +77,31 @@
     return contentViewController;
 }
 
+#pragma mark - UIPageViewControllerDelegate
+
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     if (completed) {
         int index = ((ContentViewController *)[pageViewController.viewControllers firstObject]).index;
         _pageControl.currentPage = index;
         [self updateButtonWithIndex:index];
+    }
+}
+
+#pragma mark - Action of a button
+
+- (void)nextButtonDidTap:(UIButton *)sender
+{
+    int index = ((ContentViewController *)[self.viewControllers firstObject]).index;
+    if (sender.tag) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"first_start"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        __weak typeof(self) weakSelf = self;
+        [self setViewControllers:@[[self viewControllerAtIndex:index+1]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+            weakSelf.pageControl.currentPage = index+1;
+            [weakSelf updateButtonWithIndex:index+1];
+        }];
     }
 }
 
@@ -96,21 +119,6 @@
             break;
         default:
             break;
-    }
-}
-
-- (void)nextButtonDidTap:(UIButton *)sender
-{
-    int index = ((ContentViewController *)[self.viewControllers firstObject]).index;
-    if (sender.tag) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"first_start"];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        __weak typeof(self) weakSelf = self;
-        [self setViewControllers:@[[self viewControllerAtIndex:index+1]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
-            weakSelf.pageControl.currentPage = index+1;
-            [weakSelf updateButtonWithIndex:index+1];
-        }];
     }
 }
 
