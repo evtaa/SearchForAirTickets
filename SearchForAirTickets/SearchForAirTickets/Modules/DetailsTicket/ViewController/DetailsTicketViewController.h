@@ -11,9 +11,11 @@
 #import "TypeFavorites.h"
 
 @interface DetailsTicketViewController : UIViewController
+
 @property (strong, nonatomic) FavoriteTicket *favoriteTicket;
 @property (strong,nonatomic) FavoriteMapPrice *favoriteMapPrice;
 @property (nonatomic) TypeFavorites typeFavorite;
+
 @end
 
 

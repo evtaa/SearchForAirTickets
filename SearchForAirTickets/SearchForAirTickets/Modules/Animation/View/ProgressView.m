@@ -15,6 +15,8 @@
     BOOL isActive;
 }
 
+#pragma  mark - Singletone
+
 + (instancetype)sharedInstance {
     static ProgressView *instance;
     static dispatch_once_t onceToken;
@@ -24,6 +26,36 @@
     });
     return instance;
 }
+
+#pragma  mark - Public
+
+- (void)show:(void (^)(void))completion
+{
+    self.alpha = 0.0;
+    isActive = YES;
+    [self startAnimating:1];
+    [[ProgressView getKeyWindow] addSubview:self];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        completion();
+    }];
+}
+
+- (void)dismiss:(void (^)(void))completion
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+        self->isActive = NO;
+        if (completion) {
+            completion();
+        }
+    }];
+}
+
+#pragma  mark - Private
 
 + (UIWindow*) getKeyWindow {
     for (id window in [[UIApplication sharedApplication] windows]) {
@@ -74,32 +106,6 @@
             [self startAnimating:planeId+1];
         });
     }
-}
-
-- (void)show:(void (^)(void))completion
-{
-    self.alpha = 0.0;
-    isActive = YES;
-    [self startAnimating:1];
-    [[ProgressView getKeyWindow] addSubview:self];
-    [UIView animateWithDuration:0.5 animations:^{
-        self.alpha = 1.0;
-    } completion:^(BOOL finished) {
-        completion();
-    }];
-}
-
-- (void)dismiss:(void (^)(void))completion
-{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-        self->isActive = NO;
-        if (completion) {
-            completion();
-        }
-    }];
 }
 
 @end

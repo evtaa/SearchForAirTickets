@@ -28,34 +28,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self config];
     [self createContentDataArray];
     
     self.dataSource = self;
     self.delegate = self;
+    
     ContentViewController *startViewController = [self viewControllerAtIndex:0];
     [self setViewControllers:@[startViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 50.0, self.view.bounds.size.width, 50.0)];
-    _pageControl.numberOfPages = CONTENT_COUNT;
-    _pageControl.currentPage = 0;
-    _pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
-    _pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    [self.view addSubview:_pageControl];
-    
-    _nextButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    _nextButton.frame = CGRectMake(self.view.bounds.size.width - 100.0, self.view.bounds.size.height - 50.0, 100.0, 50.0);
-    [_nextButton addTarget:self action:@selector(nextButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [_nextButton setTintColor:[UIColor blackColor]];
+}
+
+#pragma mark - Config
+
+- (void) config {
+    [self configView];
+    [self configPageControl];
+    [self configNextButton];
+}
+
+- (void) configView {
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void) configPageControl {
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 50.0, self.view.bounds.size.width, 50.0)];
+    self.pageControl.numberOfPages = CONTENT_COUNT;
+    self.pageControl.currentPage = 0;
+    self.pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    [self.view addSubview: self.pageControl];
+}
+
+- (void) configNextButton {
+    self.nextButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.nextButton.frame = CGRectMake(self.view.bounds.size.width - 100.0, self.view.bounds.size.height - 50.0, 100.0, 50.0);
+    [self.nextButton addTarget:self action:@selector(nextButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.nextButton setTintColor:[UIColor blackColor]];
     [self updateButtonWithIndex:0];
-    [self.view addSubview:_nextButton];
-    
+    [self.view addSubview: self.nextButton];
 }
 
 #pragma mark - Private
 
-- (void)createContentDataArray {
+- (void) createContentDataArray {
     NSArray *titles = [NSArray arrayWithObjects:[@"about_app_header" localize], [@"tickets_header" localize], [@"map_price_header" localize], [@"favorites_header" localize], nil];
     NSArray *contents = [NSArray arrayWithObjects:[@"about_app_describe" localize], [@"tickets_describe" localize], [@"map_price_describe" localize], [@"favorites_describe" localize], nil];
     for (int i = 0; i < 4; ++i) {
@@ -83,25 +98,8 @@
 {
     if (completed) {
         int index = ((ContentViewController *)[pageViewController.viewControllers firstObject]).index;
-        _pageControl.currentPage = index;
+        self.pageControl.currentPage = index;
         [self updateButtonWithIndex:index];
-    }
-}
-
-#pragma mark - Action of a button
-
-- (void)nextButtonDidTap:(UIButton *)sender
-{
-    int index = ((ContentViewController *)[self.viewControllers firstObject]).index;
-    if (sender.tag) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"first_start"];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        __weak typeof(self) weakSelf = self;
-        [self setViewControllers:@[[self viewControllerAtIndex:index+1]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
-            weakSelf.pageControl.currentPage = index+1;
-            [weakSelf updateButtonWithIndex:index+1];
-        }];
     }
 }
 
@@ -119,6 +117,23 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - Action of a button
+
+- (void)nextButtonDidTap:(UIButton *)sender
+{
+    int index = ((ContentViewController *)[self.viewControllers firstObject]).index;
+    if (sender.tag) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"first_start"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        __weak typeof(self) weakSelf = self;
+        [self setViewControllers:@[[self viewControllerAtIndex:index+1]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+            weakSelf.pageControl.currentPage = index+1;
+            [weakSelf updateButtonWithIndex:index+1];
+        }];
     }
 }
 

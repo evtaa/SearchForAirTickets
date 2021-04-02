@@ -13,12 +13,16 @@
 #import "NSString+Localize.h"
 
 @interface TicketTableViewCell ()
+
 @property (nonatomic, strong) UILabel *priceLabel;
 @property (nonatomic, strong) UILabel *placesLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
+
 @end
 
 @implementation TicketTableViewCell
+
+#pragma mark - Initialisation
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

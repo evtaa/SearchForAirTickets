@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface Country : NSObject
 
 @property (nonatomic, strong) NSString *name;
@@ -19,5 +17,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
-
-NS_ASSUME_NONNULL_END

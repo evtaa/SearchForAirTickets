@@ -15,9 +15,12 @@
 #import "DetailsTicketViewController.h"
 
 @interface NotificationCenter () <UNUserNotificationCenterDelegate, UITabBarControllerDelegate>
+
 @end
 
 @implementation NotificationCenter
+
+#pragma mark - Singletone
 
 + (instancetype)sharedInstance
 {
@@ -25,21 +28,23 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[NotificationCenter alloc] init];
-
+        
     });
     return instance;
 }
 
+#pragma mark - Public
+
 - (void)registerService {
-    if (@available(iOS 10.0, *)) {
+    if (@available (iOS 10.0, *)) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         center.delegate = self;
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
                               completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                                  if (!error) {
-                                      NSLog(@"request authorization succeeded!");
-                                  }
-                              }];
+            if (!error) {
+                NSLog(@"request authorization succeeded!");
+            }
+        }];
     } else {
         UIUserNotificationType types = (UIUserNotificationTypeAlert| UIUserNotificationTypeSound| UIUserNotificationTypeBadge);
         
@@ -50,7 +55,7 @@
     }
 }
 
-- (void)sendNotification:(Notification)notification {
+- (void) sendNotification: (Notification)notification {
     if (@available(iOS 10.0, *)) {
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         content.title = notification.title;
@@ -82,7 +87,7 @@
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         [center addNotificationRequest:request withCompletionHandler:nil];
         
-    }else{
+    }else {
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = notification.date;
         if (notification.title) {
@@ -94,7 +99,9 @@
     }
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+#pragma mark - UNUserNotificationCenterDelegate
+
+- (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
     NSDictionary *userInfo = response.notification.request.content.userInfo;
     Ticket *ticket = [[Ticket alloc] initWithUserInfo:userInfo];
     if ([[CoreDataHelper sharedInstance] isFavorite:ticket]) {
@@ -113,7 +120,9 @@
     }
 }
 
-Notification NotificationMake(NSString* _Nullable title, NSString* _Nonnull body, NSDate* _Nonnull date, NSURL * _Nullable  imageURL, NSDictionary * _Nullable userInfo) {
+#pragma mark - Private
+
+Notification NotificationMake (NSString* _Nullable title, NSString* _Nonnull body, NSDate* _Nonnull date, NSURL * _Nullable  imageURL, NSDictionary * _Nullable userInfo) {
     Notification notification;
     
     notification.title = title;

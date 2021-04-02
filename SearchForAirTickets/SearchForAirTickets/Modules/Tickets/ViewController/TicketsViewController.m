@@ -4,8 +4,6 @@
 //
 //  Created by Alexandr Evtodiy on 08.03.2021.
 //
-#define TicketCellReuseIdentifier @"TicketCellIdentifier"
-
 #import "TicketsViewController.h"
 #import "TicketTableViewCell.h"
 #import "CoreDataHelper.h"
@@ -13,12 +11,16 @@
 #import "DetailsTicketViewController.h"
 #import "NSString+Localize.h"
 
+#define TicketCellReuseIdentifier @"TicketCellIdentifier"
+
 @interface TicketsViewController ()
+
 @property (nonatomic, strong) NSArray *tickets;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
-@property (nonatomic) TypeFavorites typeFavorites;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) UITextField *dateTextField;
+@property (nonatomic) TypeFavorites typeFavorites;
+
 @end
 
 @implementation TicketsViewController {
@@ -26,59 +28,95 @@
     TicketTableViewCell *notificationCell;
 }
 
-#pragma mark - Initialisation
-- (instancetype)initFavoriteTicketsController {
+#pragma mark - Initialisations
+
+- (instancetype) initFavoriteTicketsController {
     self = [super init];
     if (self) {
         isFavorites = YES;
-        
-        self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[[@"favorites_tickets" localize], [@"favorites_map_prices" localize]]];
-        [self.segmentedControl addTarget:self action:@selector(changeTypeFavorites) forControlEvents:UIControlEventValueChanged];
-        self.segmentedControl.tintColor = [UIColor blackColor];
-        self.navigationItem.titleView = self.segmentedControl;
-        self.segmentedControl.selectedSegmentIndex = 0;
-        
+        [self configFavoriteTickets];
         self.tickets = [NSArray new];
-        self.title = [@"favorites_tab" localize];
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.tableView registerClass:[TicketTableViewCell class] forCellReuseIdentifier:TicketCellReuseIdentifier];
     }
     return self;
 }
 
-- (instancetype)initWithTickets:(NSArray *)tickets {
+- (instancetype) initWithTickets:(NSArray *)tickets {
     self = [super init];
     if (self)
     {   
         self.tickets = tickets;
-        self.title = [@"tickets_title" localize];
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self configTickets];
         [self.tableView registerClass:[TicketTableViewCell class] forCellReuseIdentifier:TicketCellReuseIdentifier];
-        
-        self.datePicker = [[UIDatePicker alloc] init];
-        self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
-        self.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-        
-        self.dateTextField = [[UITextField alloc] initWithFrame:self.view.bounds];
-        self.dateTextField.hidden = YES;
-        self.dateTextField.inputView = self.datePicker;
-        
-        UIToolbar *keyboardToolbar = [[UIToolbar alloc] init];
-        [keyboardToolbar sizeToFit];
-        UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonDidTap:)];
-        keyboardToolbar.items = @[flexBarButton, doneBarButton];
-        
-        self.dateTextField.inputAccessoryView = keyboardToolbar;
-        [self.view addSubview:self.dateTextField];
     }
     return self;
 }
 
-#pragma mark - Life cycle
-- (void)viewDidLoad {
-    [super viewDidLoad];
+#pragma mark - configFavoriteTickets
+
+- (void) configFavoriteTickets {
+    [self configSegmentedControlForFavorites];
+    [self configViewForFavorites];
+    [self configTableViewForFavorites];
 }
+
+- (void) configSegmentedControlForFavorites {
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[[@"favorites_tickets" localize], [@"favorites_map_prices" localize]]];
+    [self.segmentedControl addTarget:self action:@selector(changeTypeFavorites) forControlEvents:UIControlEventValueChanged];
+    self.segmentedControl.tintColor = [UIColor blackColor];
+    self.navigationItem.titleView = self.segmentedControl;
+    self.segmentedControl.selectedSegmentIndex = 0;
+}
+
+- (void) configViewForFavorites {
+    self.title = [@"favorites_tab" localize];
+}
+
+- (void) configTableViewForFavorites {
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+#pragma mark - configTickets
+
+- (void) configTickets {
+    [self configViewForTickets];
+    [self configTableViewForTickets];
+    [self configDatePickerForTickets];
+    [self configDateTextFieldForTickets];
+    [self configToolBarForTickets];
+}
+
+- (void) configViewForTickets {
+    self.title = [@"tickets_title" localize];
+}
+
+- (void) configTableViewForTickets {
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void) configDatePickerForTickets {
+    self.datePicker = [[UIDatePicker alloc] init];
+    self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    self.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+}
+
+- (void) configDateTextFieldForTickets {
+    self.dateTextField = [[UITextField alloc] initWithFrame:self.view.bounds];
+    self.dateTextField.hidden = YES;
+    self.dateTextField.inputView = self.datePicker;
+    [self.view addSubview:self.dateTextField];
+}
+
+- (void) configToolBarForTickets {
+    UIToolbar *keyboardToolbar = [[UIToolbar alloc] init];
+    [keyboardToolbar sizeToFit];
+    UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonDidTap:)];
+    keyboardToolbar.items = @[flexBarButton, doneBarButton];
+    self.dateTextField.inputAccessoryView = keyboardToolbar;
+}
+
+#pragma mark - Life cycle
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -146,6 +184,7 @@
 }
 
 #pragma mark - Table view delegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 140.0;
 }
@@ -195,7 +234,7 @@
     }
 }
 
-#pragma mark - Actions For
+#pragma mark - Actions of doneButton
 
 - (void)doneButtonDidTap:(UIBarButtonItem *)sender
 {

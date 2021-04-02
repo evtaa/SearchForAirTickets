@@ -8,17 +8,18 @@
 #import "PlaceViewController.h"
 #import "DataManager.h"
 #import "NSString+Localize.h"
-#import "NSString+Localize.h""
 
 #define ReuseIdentifier @"CellIdentifier"
 
 @interface PlaceViewController () <UISearchResultsUpdating>
+
 @property (nonatomic) PlaceType placeType;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) NSArray *currentArray;
 @property (nonatomic, strong) NSArray *searchArray;
 @property (nonatomic, strong) UISearchController *searchController;
+
 @end
 
 @implementation PlaceViewController

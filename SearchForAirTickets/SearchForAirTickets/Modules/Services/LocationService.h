@@ -6,10 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import <CoreLocation/CoreLocation.h>
-#define kLocationServiceDidUpdateCurrentLocation @"LocationServiceDidUpdateCurrentLocation"
 
+#define kLocationServiceDidUpdateCurrentLocation @"LocationServiceDidUpdateCurrentLocation"
 
 @interface LocationService : NSObject
 

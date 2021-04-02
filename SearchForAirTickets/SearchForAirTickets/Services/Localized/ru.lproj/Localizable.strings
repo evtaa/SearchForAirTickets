@@ -11,7 +11,6 @@
 "map_tab" = "Карта цен";
 "favorites_tab" = "Избранное";
 
-
 // MainViewController
 
 "main_from" = "Откуда";
@@ -19,6 +18,7 @@
 "main_search" = "Найти";
 
 // PlaceViewController
+
 "cities" = "Города";
 "airports" = "Аэропорты";
 
@@ -37,8 +37,8 @@
 "next_button" = "ДАЛЕЕ";
 "done_button" = "ГОТОВО";
 
-
 // TicketsViewController
+
 "reduction_rubles" = "руб.";
 "favorites_tickets" = "По поиску";
 "favorites_map_prices" = "По карте";
@@ -52,6 +52,7 @@
 "success" = "Успешно";
 
 // DetailsViewController
+
 "favorite_ticket" = "Избранный билет";
 "date_of_add" = "Дата добавления";
 

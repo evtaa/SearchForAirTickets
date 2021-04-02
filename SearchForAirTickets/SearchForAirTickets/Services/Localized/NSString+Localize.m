@@ -9,6 +9,8 @@
 
 @implementation NSString (Localize)
 
+#pragma mark - Public
+
 - (NSString *)localize {
     return NSLocalizedString(self, "");
 }

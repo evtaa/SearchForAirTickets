@@ -7,7 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Ticket : NSObject 
+@interface Ticket : NSObject
+
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSString *airline;
 @property (nonatomic, strong) NSDate *departure;

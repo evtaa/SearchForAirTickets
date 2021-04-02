@@ -16,21 +16,22 @@
 #import "NSString+Localize.h"
 
 @interface MainViewController ()
+
 @property (nonatomic, strong) UIView *placeContainerView;
 @property (nonatomic, strong) UIButton *departureButton;
 @property (nonatomic, strong) UIButton *arrivalButton;
-@property (nonatomic) SearchRequest searchRequest;
 @property (nonatomic, strong) UIButton *searchButton;
+@property (nonatomic) SearchRequest searchRequest;
+
 @end
 
 @implementation MainViewController
 
 #pragma mark - LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [[DataManager sharedInstance] loadData];
-    
     [self config];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
@@ -147,7 +148,7 @@
 #pragma mark - PlaceViewControllerDelegate
 
 - (void)selectPlace:(id)place withType:(PlaceType)placeType andDataType:(DataSourceType)dataType {
-    [self setPlace:place withDataType:dataType andPlaceType:placeType forButton: (placeType == PlaceTypeDeparture) ? _departureButton : _arrivalButton ];
+    [self setPlace:place withDataType:dataType andPlaceType:placeType forButton: (placeType == PlaceTypeDeparture) ? self.departureButton : self.arrivalButton ];
 }
 
 - (void)setPlace:(id)place withDataType:(DataSourceType)dataType andPlaceType:(PlaceType)placeType forButton:(UIButton *)button {
@@ -172,6 +173,7 @@
 }
 
 #pragma mark - Private
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDataManagerLoadDataDidComplete object:nil];
@@ -192,6 +194,5 @@
         [self presentViewController:firstViewController animated:YES completion:nil];
     }
 }
-
 
 @end

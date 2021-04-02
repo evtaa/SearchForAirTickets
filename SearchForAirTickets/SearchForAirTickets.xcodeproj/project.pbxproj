@@ -361,8 +361,7 @@
 		A85E4D40260CB36100040B13 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				A85E4D41260CB39700040B13 /* ProgressView.h */,
-				A85E4D42260CB39700040B13 /* ProgressView.m */,
+				A87F52DC2617465E00B33D2E /* View */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -419,6 +418,15 @@
 				A869D7A32614D44F00C05D63 /* InfoPlist.strings */,
 			);
 			path = Localized;
+			sourceTree = "<group>";
+		};
+		A87F52DC2617465E00B33D2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A85E4D41260CB39700040B13 /* ProgressView.h */,
+				A85E4D42260CB39700040B13 /* ProgressView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A88932592607C17400F74D90 /* ViewController */ = {

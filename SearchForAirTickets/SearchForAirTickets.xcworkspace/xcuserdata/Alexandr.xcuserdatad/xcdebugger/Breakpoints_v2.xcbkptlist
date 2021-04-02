@@ -14,8 +14,8 @@
             filePath = "SearchForAirTickets/Modules/Services/LocationService.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-locationManagerDidChangeAuthorization:"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "SearchForAirTickets/Modules/Services/LocationService.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-locationManagerDidChangeAuthorization:"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "SearchForAirTickets/Modules/Services/LocationService.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-locationManagerDidChangeAuthorization:"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "SearchForAirTickets/Modules/Services/LocationService.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-locationManagerDidChangeAuthorization:"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "SearchForAirTickets/Modules/Main/ViewController/MainViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-searchButtonDidTap:"
             landmarkType = "7">
             <Locations>
@@ -190,8 +190,8 @@
             filePath = "SearchForAirTickets/Modules/Animation/ProgressView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "+sharedInstance"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,25 +206,9 @@
             filePath = "SearchForAirTickets/Modules/Animation/ProgressView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "+sharedInstance"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC5524E2-222A-4AA5-990F-246D39F1B636"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SearchForAirTickets/Modules/Animation/ProgressView.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-show:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,8 +222,8 @@
             filePath = "SearchForAirTickets/Modules/Animation/ProgressView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "+getKeyWindow"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +238,8 @@
             filePath = "SearchForAirTickets/Modules/Animation/ProgressView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "+getKeyWindow"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +254,8 @@
             filePath = "SearchForAirTickets/Modules/Tickets/ViewController/TicketsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-doneButtonDidTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +270,8 @@
             filePath = "SearchForAirTickets/Modules/Tickets/ViewController/TicketsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "-doneButtonDidTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +286,8 @@
             filePath = "SearchForAirTickets/Modules/Tickets/ViewController/TicketsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "-doneButtonDidTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +302,8 @@
             filePath = "SearchForAirTickets/Modules/Tickets/ViewController/TicketsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "-doneButtonDidTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +334,8 @@
             filePath = "SearchForAirTickets/Modules/Tickets/ViewController/TicketsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "-doneButtonDidTap:"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,8 +462,8 @@
             filePath = "SearchForAirTickets/Modules/Tickets/ViewController/TicketsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
