@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  SearchForAirTickets
+
+  Created by Alexandr Evtodiy on 31.03.2021.
+  
+*/
+"CFBundleDisplayName" = "АВИАБИЛЕТЫ";
+"CFBundleName" = "АВИАБИЛЕТЫ";

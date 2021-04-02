@@ -7,6 +7,8 @@
 
 #import "PlaceViewController.h"
 #import "DataManager.h"
+#import "NSString+Localize.h"
+#import "NSString+Localize.h""
 
 #define ReuseIdentifier @"CellIdentifier"
 
@@ -52,9 +54,9 @@
 
 - (void) configView {
     if (self.placeType == PlaceTypeDeparture) {
-        self.title = @"Откуда";
+        self.title = [@"main_from" localize];
     } else {
-        self.title = @"Куда";
+        self.title = [@"main_to" localize];
     }
 }
 
@@ -82,7 +84,7 @@
 }
 
 - (void) configSegmentedControl {
-    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Города", @"Аэропорты"]];
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[[@"cities" localize], [@"airports" localize]]];
     [self.segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
     self.segmentedControl.tintColor = [UIColor blackColor];
     self.navigationItem.titleView = self.segmentedControl;
