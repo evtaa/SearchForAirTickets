@@ -24,6 +24,7 @@
 
 @implementation MapViewController
 
+#pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = [@"map_tab" localize];
@@ -40,6 +41,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentLocation:) name:kLocationServiceDidUpdateCurrentLocation object:nil];
 }
 
+#pragma mark - Private
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -72,15 +74,15 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             annotation.title = [NSString stringWithFormat:@"%@ (%@)", price.destination.name, price.destination.code];
-            annotation.subtitle = [NSString stringWithFormat:@"%ld руб.", (long)price.value];
+            annotation.subtitle = [NSString stringWithFormat:@"%ld %@", (long)price.value, [@"reduction_rubles" localize]];
             annotation.coordinate = price.destination.coordinate;
-           // CGFloat floate = price.destination.coordinate.latitude;
             [self.mapView addAnnotation: annotation];
         });
     }
 }
 
 #pragma mark - Config View For Annotation
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     MKMarkerAnnotationView *annotationView =  (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:IdentifierForAnnotationView forAnnotation:annotation];
     annotationView.canShowCallout = YES;
