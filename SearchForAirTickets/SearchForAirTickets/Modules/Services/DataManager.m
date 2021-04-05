@@ -15,7 +15,7 @@
 
 @implementation DataManager
 
-#pragma mark - Sington
+#pragma mark - Singleton
 + (instancetype)sharedInstance
 {
     static DataManager *instance;

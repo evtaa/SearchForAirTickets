@@ -9,6 +9,8 @@
 
 @implementation Country
 
+#pragma mark - Initialisation
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];

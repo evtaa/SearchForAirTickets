@@ -9,8 +9,10 @@
 #import "TypeFavorites.h"
 
 @interface TicketsViewController : UITableViewController
-- (instancetype)initWithTickets:(NSArray *)tickets;
-- (instancetype)initFavoriteTicketsController;
+
+- (instancetype) initWithTickets:(NSArray *)tickets;
+- (instancetype) initFavoriteTicketsController;
+
 @end
 
 

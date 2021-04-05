@@ -86,8 +86,8 @@
     }];
 }
 
-
 #pragma mark - Private
+
 - (void)IPAddressWithCompletion:(void (^)(NSString *ipAddress))completion {
     [self load:API_URL_IP_ADDRESS withCompletion:^(id  _Nullable result) {
         NSDictionary *json = result;

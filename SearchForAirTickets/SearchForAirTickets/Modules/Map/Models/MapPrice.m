@@ -10,6 +10,8 @@
 
 @implementation MapPrice
 
+#pragma mark - Initialisation
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary withOrigin: (City *)origin
 {
     self = [super init];
@@ -27,12 +29,13 @@
     return self;
 }
 
+#pragma mark - Private
+
 - (NSDate * _Nullable)dateFromString:(NSString *)dateString {
     if (!dateString) { return  nil; }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     return [dateFormatter dateFromString: dateString];
 }
-
 
 @end

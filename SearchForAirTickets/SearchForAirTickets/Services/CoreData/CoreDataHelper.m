@@ -13,6 +13,8 @@
 
 @implementation CoreDataHelper
 
+#pragma mark - Singletone
+
 + (instancetype)sharedInstance
 {
     static CoreDataHelper *instance;

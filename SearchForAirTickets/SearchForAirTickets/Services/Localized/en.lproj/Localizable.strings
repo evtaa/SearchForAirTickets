@@ -12,7 +12,6 @@
 "map_tab" = "Map of prices";
 "favorites_tab" = "Favorites";
 
-
 // MainViewController
 
 "main_from" = "Departure";
@@ -38,7 +37,6 @@
 
 "next_button" = "CONTINUE";
 "done_button" = "FINISH";
-
 
 // TicketsViewController
 

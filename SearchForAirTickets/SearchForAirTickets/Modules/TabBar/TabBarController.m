@@ -17,12 +17,8 @@
 
 @implementation TabBarController
 
-#pragma mark - Life Cycle
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 #pragma mark - Initialisation
+
 - (instancetype)init
 {
     self = [super initWithNibName:nil bundle:nil];

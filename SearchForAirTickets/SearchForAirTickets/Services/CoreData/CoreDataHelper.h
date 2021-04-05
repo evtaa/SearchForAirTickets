@@ -15,6 +15,7 @@
 #import "MapPrice.h"
 
 @interface CoreDataHelper : NSObject
+
 + (instancetype)sharedInstance;
 
 - (FavoriteTicket *)favoriteFromTicket:(Ticket *)ticket;
@@ -27,6 +28,7 @@
 - (void)addToFavoriteMapPrice:(MapPrice *)price;
 - (void)removeFromFavoriteMapPrice:(MapPrice *)price;
 - (NSArray *)favoritesMapPrice;
+
 @end
 
 

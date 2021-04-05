@@ -11,15 +11,19 @@
 #import "NSString+Localize.h"
 
 @interface DetailsTicketViewController ()
+
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UILabel *priceLabel;
 @property (nonatomic, strong) UILabel *placesLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (strong, nonatomic) UILabel *createdLabel;
 @property (strong, nonatomic) UIImageView *airlineLogoView;
+
 @end
 
 @implementation DetailsTicketViewController
+
+#pragma mark - Initialisation
 
 - (instancetype)init
 {
@@ -31,16 +35,17 @@
 }
 
 #pragma mark - LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [self setupNavigationController];
 }
 
 #pragma mark - Config
+
 - (void) config {
     [self setupView];
     [self setupNavigationController];
@@ -113,6 +118,8 @@
     self.dateLabel.font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightRegular];
     [self.contentView addSubview:self.dateLabel];
 }
+
+#pragma mark - Config properties
 
 - (void)setFavoriteTicket:(FavoriteTicket *)favoriteTicket {
     self.priceLabel.text = [NSString stringWithFormat:@"%lld %@", favoriteTicket.price, [@"reduction_rubles" localize]];

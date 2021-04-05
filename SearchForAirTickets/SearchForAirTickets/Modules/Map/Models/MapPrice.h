@@ -8,8 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "City.h"
 
-
 @interface MapPrice : NSObject
+
 @property (strong, nonatomic) City *destination;
 @property (strong, nonatomic) City *origin;
 @property (strong, nonatomic) NSDate *departure;
@@ -20,6 +20,7 @@
 @property (nonatomic) BOOL actual;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary withOrigin: (City *)origin;
+
 @end
 
 

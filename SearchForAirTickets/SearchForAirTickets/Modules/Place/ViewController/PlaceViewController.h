@@ -8,8 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 typedef enum PlaceType {
     PlaceTypeArrival,
     PlaceTypeDeparture
@@ -22,8 +20,8 @@ typedef enum PlaceType {
 @interface PlaceViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) id<PlaceViewControllerDelegate>delegate;
+
 - (instancetype)initWithType:(PlaceType)type;
 
 @end
 
-NS_ASSUME_NONNULL_END

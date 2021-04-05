@@ -9,6 +9,8 @@
 
 @implementation Ticket
 
+#pragma mark - Initialisations
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
@@ -36,6 +38,8 @@
     }
     return self;
 }
+
+#pragma mark - Private
 
 NSDate *dateFromString(NSString *dateString) {
     if (!dateString) { return  nil; }

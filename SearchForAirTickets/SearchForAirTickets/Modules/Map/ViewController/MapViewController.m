@@ -12,36 +12,51 @@
 #import "CoreDataHelper.h"
 #import "NSString+Localize.h"
 
-
 #define IdentifierForAnnotationView @"Identifier"
 
 @interface MapViewController () <MKMapViewDelegate>
+
 @property (strong, nonatomic) MKMapView *mapView;
 @property (nonatomic, strong) LocationService *locationService;
 @property (nonatomic, strong) City *origin;
 @property (nonatomic, strong) NSArray *prices;
+
 @end
 
 @implementation MapViewController
 
 #pragma mark - Life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = [@"map_tab" localize];
-    
-    self.mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
-    self.mapView.showsUserLocation = YES;
-    self.mapView.delegate = self;
-    [self.mapView registerClass:[MKMarkerAnnotationView class] forAnnotationViewWithReuseIdentifier:IdentifierForAnnotationView];
-    [self.view addSubview:self.mapView];
-    
+    [self config];
     [[DataManager sharedInstance] loadData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentLocation:) name:kLocationServiceDidUpdateCurrentLocation object:nil];
 }
 
+#pragma mark - Config
+
+- (void) config {
+    [self configView];
+    [self configMapView];
+}
+
+- (void) configView {
+    self.title = [@"map_tab" localize];
+}
+
+- (void) configMapView {
+    self.mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    self.mapView.showsUserLocation = YES;
+    self.mapView.delegate = self;
+    [self.mapView registerClass:[MKMarkerAnnotationView class] forAnnotationViewWithReuseIdentifier:IdentifierForAnnotationView];
+    [self.view addSubview:self.mapView];
+}
+
 #pragma mark - Private
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -65,6 +80,8 @@
         }
     }
 }
+
+#pragma mark - Setting a property
 
 - (void)setPrices:(NSArray *)prices {
     _prices = prices;
@@ -92,6 +109,7 @@
     return annotationView;
 }
 
+#pragma mark - Action with AnnotationView
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     NSMutableArray <MapPrice *> *searchPrices = [[NSMutableArray alloc] init];
@@ -121,6 +139,5 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
-
 
 @end

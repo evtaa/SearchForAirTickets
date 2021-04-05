@@ -10,26 +10,38 @@
 #import "NSString+Localize.h"
 
 @interface LocationService () <CLLocationManagerDelegate>
+
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
+
 @end
 
 @implementation LocationService
+
+#pragma mark - Initialisation
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-        _locationManager.distanceFilter = kCLLocationAccuracyKilometer;
-        _locationManager.desiredAccuracy = 500;
-        [_locationManager requestWhenInUseAuthorization];
+        [self configLocationManager];
     }
     return self;
 }
 
--(void) locationManagerDidChangeAuthorization:(CLLocationManager *)manager {
+#pragma mark - Config
+
+- (void) configLocationManager {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLLocationAccuracyKilometer;
+    self.locationManager.desiredAccuracy = 500;
+    [self.locationManager requestWhenInUseAuthorization];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void) locationManagerDidChangeAuthorization:(CLLocationManager *)manager {
     switch (manager.authorizationStatus) {
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             [self.locationManager startUpdatingLocation];
